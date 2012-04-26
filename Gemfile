@@ -25,7 +25,7 @@ gem 'jquery-rails'
 group :test, :development do
   gem "rspec-rails", "~> 2.8"
   gem "webrat"
-  gem 'factory_girl_rails', '1.0'
+  gem "factory_girl_rails", "~> 3.0"
   gem 'ZenTest'
   gem 'spork'
   gem 'autotest'    
