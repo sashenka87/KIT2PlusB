@@ -167,6 +167,7 @@ DEPENDENCIES
   factory_girl_rails (~> 3.0)
   foreman
   jquery-rails
+  nokogiri
   pg
   rails (= 3.2.3)
   rspec-rails (~> 2.8)
