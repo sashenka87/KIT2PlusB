@@ -36,6 +36,8 @@ group :test, :development do
   gem 'annotate', '~> 2.4.1.beta' 
 end
 
+gem 'foreman'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
