@@ -15,5 +15,5 @@
 #
 
 class Participant < ActiveRecord::Base
-  attr_accessible :country, :first_name, :instructor, :ip_address, :last_name, :session_id
+  attr_accessible :country, :first_name, :instructor, :ip_address, :last_name, :session_id  
 end
