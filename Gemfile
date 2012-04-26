@@ -22,6 +22,20 @@ end
 
 gem 'jquery-rails'
 
+group :test, :development do
+  gem "rspec-rails", "~> 2.8"
+  gem "webrat"
+  gem 'factory_girl_rails', '1.0'
+  gem 'ZenTest'
+  gem 'spork'
+  gem 'autotest'    
+  gem 'autotest-rails'                                                    
+  gem 'autotest-rails-pure'                                             
+  gem 'autotest-fsevent'                                                
+  gem 'autotest-growl'
+  gem 'annotate', '~> 2.4.1.beta' 
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
