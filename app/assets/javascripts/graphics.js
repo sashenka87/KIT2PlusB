@@ -1,0 +1,9 @@
+$(function(){
+	$(".kit-graphic").click(function(){
+		$(".kit-graphic").removeClass("dark-border");
+		$(".kit-graphic").addClass("light-border");
+		$(this).removeClass("light-border");
+		$(this).addClass("dark-border");
+		$("#graphic_graphics_ki").val($(this).data("kit-value"));
+	})
+});

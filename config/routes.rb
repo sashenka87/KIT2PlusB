@@ -1,4 +1,6 @@
 KIT2PlusB::Application.routes.draw do
+  resources :graphics
+
   root :to => 'pages#welcome'
 
   match '/welcome' => 'pages#welcome', :as => "welcome", :via => :get
