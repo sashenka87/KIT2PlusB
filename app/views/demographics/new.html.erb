@@ -1,5 +1,4 @@
-<h1>New demographic</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', demographics_path %>
+<%- model_class = @demographic.class -%>
+<h1>Demographics</h1>
+<br>                               
+<%= render :partial => 'form' %>

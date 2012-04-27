@@ -90,7 +90,7 @@ describe ParticipantsController do
 
       it "redirects to the created participant" do
         post :create, {:participant => valid_attributes}, valid_session
-        response.should redirect_to(Participant.last)
+        response.should redirect_to(new_demographic_path)
       end
     end
 
