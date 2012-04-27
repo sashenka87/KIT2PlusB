@@ -13,9 +13,9 @@
   <%= render "shared/error_messages", :object => f.object %>
   
   <div class="control-group">
-    <%= f.text_area :graphics_kt_text, :class => 'span5', :rows => 10 %>
+    <%= f.text_area :graphics_kt_text, :class => 'span5', :rows => 10, :placeholder => "Please justify your response." %>
   </div>
   <p>
-    <%= f.submit "Next Question", :class => 'btn btn-primary' %> &nbsp Please click the most appropriate diagram.
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
   </p>
 <% end %>
