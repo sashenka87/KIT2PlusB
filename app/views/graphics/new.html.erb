@@ -1,34 +1,3 @@
 <h1>Graphics Task</h1>
 <br>
-<p class="instructions">How would you represent the relation between <strong>knowledge</strong> (K) and <strong>information</strong> (I)?</p>
-<br>
-
-<div class="row">
-  <%= image_tag "kit_graphics/KI/0.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 0 } %>
-  <%= image_tag "kit_graphics/KI/4.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 4 } %>
-  <%= image_tag "kit_graphics/KI/3.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 3 } %>
-</div> 
-<br> 
-<div class="row">
-  <%= image_tag "kit_graphics/KI/1.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 1 } %>
-  <%= image_tag "kit_graphics/KI/2.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 2 } %>
-  <%= image_tag "kit_graphics/KI/5.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 5 } %>
-</div>
-<br/>
-<div class="row">
-  <%= image_tag "kit_graphics/KI/6.jpg", :class => "span3 light-border kit-graphic", :data => { :kit_value => 6 } %>
-</div>
-
-<%= form_for @graphic, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= render "shared/error_messages", :object => f.object %>
-  <%= f.hidden_field :graphics_ki %>
-  <br>
-  <p>
-    <%= f.submit "Next Question", :class => 'btn btn-primary' %> &nbsp Please click the most appropriate diagram.
-  </p>
-<% end %>
-
-
-<h1>Graphics Task</h1>
-<br>
 <%= render :partial => 'form' %>

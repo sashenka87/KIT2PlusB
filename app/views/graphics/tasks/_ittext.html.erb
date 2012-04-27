@@ -1,0 +1,21 @@
+<h1>Graphics Task</h1>
+<br>
+<p class="instructions">Please explain why the graphic representation you chose best represents your view of the relation between <strong>information</strong> and <strong>truth</strong>.</p>
+<br>
+<div class="row">
+  <div class="span4">
+    <%= image_tag "kit_graphics/IT/0.jpg", :class => "span4" %>
+  </div>
+</div>
+<br><br>
+
+<%= form_for @graphic, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  
+  <div class="control-group">
+    <%= f.text_area :graphic_it_text, :class => 'span10', :rows => 10 %>
+  </div>
+  <p>
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %> &nbsp Please click the most appropriate diagram.
+  </p>
+<% end %>

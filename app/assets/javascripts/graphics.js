@@ -4,6 +4,6 @@ $(function(){
 		$(".kit-graphic").addClass("light-border");
 		$(this).removeClass("light-border");
 		$(this).addClass("dark-border");
-		$("#graphic_graphics_ki").val($(this).data("kit-value"));
+		$("#graphics_value").val($(this).data("kit-value"));
 	})
 });
