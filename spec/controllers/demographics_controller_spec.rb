@@ -94,7 +94,7 @@ describe DemographicsController do
 
       it "redirects to the created demographic" do
         post :create, {:demographic => valid_attributes}, valid_session
-        response.should redirect_to(Demographic.last)
+        response.should redirect_to(new_graphic_path)
       end
     end
 

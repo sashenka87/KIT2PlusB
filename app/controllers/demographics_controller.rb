@@ -42,11 +42,11 @@ class DemographicsController < ApplicationController
 
     respond_to do |format|
       if @demographic.save
-        format.html { redirect_to @demographic, notice: 'Demographic was successfully created.' }
-        format.json { render json: @demographic, status: :created, location: @demographic }
+        format.html { redirect_to new_graphic_path }
+        # format.json { render json: @demographic, status: :created, location: @demographic }
       else
         format.html { render action: "new" }
-        format.json { render json: @demographic.errors, status: :unprocessable_entity }
+        # format.json { render json: @demographic.errors, status: :unprocessable_entity }
       end
     end
   end
