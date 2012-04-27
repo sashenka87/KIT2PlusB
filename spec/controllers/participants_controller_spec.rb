@@ -57,13 +57,13 @@ describe ParticipantsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested participant as @participant" do
-      participant = Participant.create! valid_attributes
-      get :edit, {:id => participant.to_param}, valid_session
-      assigns(:participant).should eq(participant)
-    end
-  end
+  # describe "GET edit" do
+  #   it "assigns the requested participant as @participant" do
+  #     participant = Participant.create! valid_attributes
+  #     get :edit, {:id => participant.to_param}, valid_session
+  #     assigns(:participant).should eq(participant)
+  #   end
+  # end
 
   describe "POST create" do
     describe "with valid params" do
@@ -102,49 +102,49 @@ describe ParticipantsController do
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
-      it "updates the requested participant" do
-        participant = Participant.create! valid_attributes
-        # Assuming there are no other participants in the database, this
-        # specifies that the Participant created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Participant.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => participant.to_param, :participant => {'these' => 'params'}}, valid_session
-      end
-
-      it "assigns the requested participant as @participant" do
-        participant = Participant.create! valid_attributes
-        put :update, {:id => participant.to_param, :participant => valid_attributes}, valid_session
-        assigns(:participant).should eq(participant)
-      end
-
-      it "redirects to the participant" do
-        participant = Participant.create! valid_attributes
-        put :update, {:id => participant.to_param, :participant => valid_attributes}, valid_session
-        response.should redirect_to(participant)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns the participant as @participant" do
-        participant = Participant.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Participant.any_instance.stub(:save).and_return(false)
-        put :update, {:id => participant.to_param, :participant => {}}, valid_session
-        assigns(:participant).should eq(participant)
-      end
-
-      it "re-renders the 'edit' template" do
-        participant = Participant.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Participant.any_instance.stub(:save).and_return(false)
-        put :update, {:id => participant.to_param, :participant => {}}, valid_session
-        response.should render_template("edit")
-      end
-    end
-  end
+  # describe "PUT update" do
+  #   describe "with valid params" do
+  #     it "updates the requested participant" do
+  #       participant = Participant.create! valid_attributes
+  #       # Assuming there are no other participants in the database, this
+  #       # specifies that the Participant created on the previous line
+  #       # receives the :update_attributes message with whatever params are
+  #       # submitted in the request.
+  #       Participant.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+  #       put :update, {:id => participant.to_param, :participant => {'these' => 'params'}}, valid_session
+  #     end
+  # 
+  #     it "assigns the requested participant as @participant" do
+  #       participant = Participant.create! valid_attributes
+  #       put :update, {:id => participant.to_param, :participant => valid_attributes}, valid_session
+  #       assigns(:participant).should eq(participant)
+  #     end
+  # 
+  #     it "redirects to the participant" do
+  #       participant = Participant.create! valid_attributes
+  #       put :update, {:id => participant.to_param, :participant => valid_attributes}, valid_session
+  #       response.should redirect_to(participant)
+  #     end
+  #   end
+  # 
+  #   describe "with invalid params" do
+  #     it "assigns the participant as @participant" do
+  #       participant = Participant.create! valid_attributes
+  #       # Trigger the behavior that occurs when invalid params are submitted
+  #       Participant.any_instance.stub(:save).and_return(false)
+  #       put :update, {:id => participant.to_param, :participant => {}}, valid_session
+  #       assigns(:participant).should eq(participant)
+  #     end
+  # 
+  #     it "re-renders the 'edit' template" do
+  #       participant = Participant.create! valid_attributes
+  #       # Trigger the behavior that occurs when invalid params are submitted
+  #       Participant.any_instance.stub(:save).and_return(false)
+  #       put :update, {:id => participant.to_param, :participant => {}}, valid_session
+  #       response.should render_template("edit")
+  #     end
+  #   end
+  # end
 
   describe "DELETE destroy" do
     it "destroys the requested participant" do
