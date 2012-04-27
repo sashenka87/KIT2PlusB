@@ -32,7 +32,7 @@ describe ParticipantsController do
   # in order to pass any filters (e.g. authentication) defined in
   # ParticipantsController. Be sure to keep this updated too.
   def valid_session
-    {}
+    { :session_id => "woot" }
   end
 
   describe "GET index" do
@@ -41,7 +41,7 @@ describe ParticipantsController do
     end
     
     it "assigns all participants as @participants" do
-      participant = Participant.create! valid_attributes
+      participant = FactoryGirl.create(:participant)
       get :index, {}, valid_session
       assigns(:participants).should eq([participant])
     end
@@ -53,7 +53,7 @@ describe ParticipantsController do
     end
     
     it "assigns the requested participant as @participant" do
-      participant = Participant.create! valid_attributes
+      participant = FactoryGirl.create(:participant)
       get :show, {:id => participant.to_param}, valid_session
       assigns(:participant).should eq(participant)
     end
@@ -161,14 +161,14 @@ describe ParticipantsController do
     end
     
     it "destroys the requested participant" do
-      participant = Participant.create! valid_attributes
+      participant = FactoryGirl.create(:participant)
       expect {
         delete :destroy, {:id => participant.to_param}, valid_session
       }.to change(Participant, :count).by(-1)
     end
 
     it "redirects to the participants list" do
-      participant = Participant.create! valid_attributes
+      participant = FactoryGirl.create(:participant)
       delete :destroy, {:id => participant.to_param}, valid_session
       response.should redirect_to(participants_url)
     end

@@ -27,7 +27,7 @@ class ParticipantsController < ApplicationController
   # GET /participants/new.json
   def new
     @participant = Participant.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @participant }
@@ -38,6 +38,8 @@ class ParticipantsController < ApplicationController
   # POST /participants.json
   def create
     @participant = Participant.new(params[:participant])
+    @participant.session_id = session[:session_id]
+    @participant.ip_address = request.ip
 
     respond_to do |format|
       if @participant.save
