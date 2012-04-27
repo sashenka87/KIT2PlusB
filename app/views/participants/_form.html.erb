@@ -1,30 +1,37 @@
 <%= form_for @participant, :html => { :class => 'form-horizontal' } do |f| %>
   <%= render "shared/error_messages", :object => f.object %>
   
-  <div class="control-group">
-    <%= f.label :first_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :first_name, :class => 'text_field' %>
+  <div class="row">
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :first_name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :first_name, :class => 'text_field', :placeholder => "i.e., Jane" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :last_name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :last_name, :class => 'text_field', :placeholder => "i.e., Smith" %>
+        </div>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="control-group">
+        <%= f.label :instructor, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :instructor, :class => 'text_field', :placeholder => "i.e., Dr. Alexander" %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :country, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.select :country, options_for_select(["USA", "Israel", "Netherlands", "New Zealand"]) %>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :last_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :last_name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :instructor, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :instructor, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :country, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :country, :class => 'text_field' %>
-    </div>
-  </div>
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
