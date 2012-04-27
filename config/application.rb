@@ -61,5 +61,30 @@ module KIT2PlusB
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      html = %(<div class="field_with_errors">#{html_tag}</div>).html_safe
+      # add nokogiri gem to Gemfile
+      elements = Nokogiri::HTML::DocumentFragment.parse(html_tag).css "label, input"
+      elements.each do |e|
+        if e.node_name.eql? 'label'
+          e["data-error"] = "true"
+          html = %(#{e}).html_safe
+          # html = %(<div class="clearfix error no-bottom" style="display:inline;">#{e}</div>).html_safe
+        elsif e.node_name.eql? 'input'
+          if instance.error_message.kind_of?(Array)
+            e["data-error"] = %(#{instance.error_message.join(',')})
+            html = %(#{e}).html_safe
+            # html = %(<div class="clearfix error no-bottom">#{html_tag}<span class="help-inline">&nbsp;#{instance.error_message.join(',')}</span></div>).html_safe
+          else
+            e["data-error"] = %(#{instance.error_message})
+            html = %(#{e}).html_safe
+            # html = %(<div class="clearfix error no-bottom">#{html_tag}<span class="help-inline">&nbsp;#{instance.error_message}</span></div>).html_safe
+          end
+        end
+      end
+      html
+    end
+    
   end
 end

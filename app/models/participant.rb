@@ -16,4 +16,6 @@
 
 class Participant < ActiveRecord::Base
   attr_accessible :country, :first_name, :instructor, :ip_address, :last_name, :session_id
+  
+  validates_presence_of :instructor, :on => :create, :message => "can't be blank"  
 end
