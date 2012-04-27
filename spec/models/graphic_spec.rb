@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20120427062443
+# Schema version: 20120427193221
 #
 # Table name: graphics
 #
@@ -8,8 +8,9 @@
 #  graphics_ki      :integer
 #  graphics_ki_text :text
 #  graphics_kt      :integer
+#  graphics_kt_text :text
 #  graphics_it      :integer
-#  graphic_it_text  :text
+#  graphics_it_text :text
 #  k_def            :text
 #  i_def            :text
 #  t_def            :text
@@ -18,6 +19,7 @@
 #  domain           :text
 #  created_at       :datetime        not null
 #  updated_at       :datetime        not null
+#  step             :integer         default(0)
 #
 
 require 'spec_helper'

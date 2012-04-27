@@ -23,11 +23,11 @@ class GraphicsController < ApplicationController
 
   # GET /graphics/new
   # GET /graphics/new.json
-  def new
-    @graphic = Graphic.new
+  def new    
+    @graphic = current_graphic || Graphic.new
 
     respond_to do |format|
-      format.html { render 'graphics/steps/step1' }
+      format.html { render "graphics/steps/step#{@graphic.step}" }
       format.json { render json: @graphic }
     end
   end
@@ -40,15 +40,16 @@ class GraphicsController < ApplicationController
   # POST /graphics
   # POST /graphics.json
   def create
-    @graphic = Graphic.new(params[:graphic])
+    @graphic = current_participant.build_graphic(params[:graphic])
+    @graphic.step = 1
 
     respond_to do |format|
       if @graphic.save
-        format.html { redirect_to @graphic, notice: 'Graphic was successfully created.' }
-        format.json { render json: @graphic, status: :created, location: @graphic }
+        format.html { redirect_to new_graphic_path }
+        # format.json { render json: @graphic, status: :created, location: @graphic }
       else
-        format.html { render action: "new" }
-        format.json { render json: @graphic.errors, status: :unprocessable_entity }
+        format.html { render "graphics/steps/step#{@graphic.step - 1}" }
+        # format.json { render json: @graphic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,15 +57,16 @@ class GraphicsController < ApplicationController
   # PUT /graphics/1
   # PUT /graphics/1.json
   def update
-    @graphic = Graphic.find(params[:id])
+    @graphic = current_graphic
+    @graphic.step += 1
 
     respond_to do |format|
       if @graphic.update_attributes(params[:graphic])
-        format.html { redirect_to @graphic, notice: 'Graphic was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to new_graphic_path }
+        # format.json { head :no_content }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @graphic.errors, status: :unprocessable_entity }
+        format.html { render "graphics/steps/step#{@graphic.step - 1}" }
+        # format.json { render json: @graphic.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -78,6 +80,21 @@ class GraphicsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to graphics_url }
       format.json { head :no_content }
+    end
+  end
+  
+  private 
+  
+  def current_participant
+    @participant = Participant.find_by_session_id(session[:session_id])
+  end
+  
+  def current_graphic
+    current_participant
+    if @participant.nil?
+      return nil
+    else
+      return @participant.graphic
     end
   end
 end
