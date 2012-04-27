@@ -25,4 +25,6 @@ class Participant < ActiveRecord::Base
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :instructor
+  
+  has_one :demographic, :class_name => "Demographic", :foreign_key => "participant_id"
 end

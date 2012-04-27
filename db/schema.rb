@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427031241) do
+ActiveRecord::Schema.define(:version => 20120427045844) do
+
+  create_table "demographics", :force => true do |t|
+    t.integer  "participant_id"
+    t.integer  "gender"
+    t.integer  "age"
+    t.string   "ethnicity"
+    t.string   "major"
+    t.integer  "year_university"
+    t.float    "gpa"
+    t.string   "country_of_residence"
+    t.string   "country_of_birth"
+    t.string   "country_of_schooling"
+    t.boolean  "native_english"
+    t.string   "native_language"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "participants", :force => true do |t|
     t.string   "session_id"
