@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120426070125) do
+ActiveRecord::Schema.define(:version => 20120427031241) do
 
   create_table "participants", :force => true do |t|
     t.string   "session_id"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(:version => 20120426070125) do
     t.string   "last_name"
     t.string   "instructor"
     t.string   "country"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+    t.integer  "current_question", :default => 0
   end
 
 end
