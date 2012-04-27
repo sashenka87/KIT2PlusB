@@ -15,9 +15,9 @@ describe GraphicsController do
       get("/graphics/1").should route_to("graphics#show", :id => "1")
     end
 
-    it "routes to #edit" do
-      get("/graphics/1/edit").should route_to("graphics#edit", :id => "1")
-    end
+    # it "routes to #edit" do
+    #   get("/graphics/1/edit").should route_to("graphics#edit", :id => "1")
+    # end
 
     it "routes to #create" do
       post("/graphics").should route_to("graphics#create")

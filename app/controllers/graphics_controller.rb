@@ -1,4 +1,7 @@
 class GraphicsController < ApplicationController
+  before_filter :authenticate_admin, :only => [:index, :show, :destroy]
+  before_filter :go_to_consent, :only => [:new, :create, :update]
+  
   # GET /graphics
   # GET /graphics.json
   def index
@@ -30,11 +33,6 @@ class GraphicsController < ApplicationController
       format.html { render "graphics/steps/step#{@graphic.step}" }
       format.json { render json: @graphic }
     end
-  end
-
-  # GET /graphics/1/edit
-  def edit
-    @graphic = Graphic.find(params[:id])
   end
 
   # POST /graphics
@@ -90,11 +88,24 @@ class GraphicsController < ApplicationController
   end
   
   def current_graphic
-    current_participant
     if @participant.nil?
       return nil
     else
       return @participant.graphic
+    end
+  end
+    
+  def authenticate_admin
+    authenticate_or_request_with_http_basic do |user, password|
+      user == ENV["ADMIN_USER"] && password == ENV["ADMIN_PASS"]
+    end
+  end
+  
+  def go_to_consent
+    current_participant
+    if @participant.nil?
+      flash[:alert] = "Sorry we need you to consent first."
+      redirect_to new_participant_path
     end
   end
 end
