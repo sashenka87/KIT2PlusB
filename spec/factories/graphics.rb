@@ -6,9 +6,9 @@ FactoryGirl.define do
     graphics_ki 1
     graphics_ki_text "MyText"
     graphics_kt 1
-    graphics_kt "MyText"
+    graphics_kt_text "MyText"
     graphics_it 1
-    graphic_it_text "MyText"
+    graphics_it_text "MyText"
     k_def "MyText"
     i_def "MyText"
     t_def "MyText"

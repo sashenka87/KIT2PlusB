@@ -19,32 +19,75 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe GraphicsController do
-
+  render_views
+  
   # This should return the minimal set of attributes required to create a valid
   # Graphic. As you add validations to Graphic, be sure to
   # update the return value of this method accordingly.
-  def valid_attributes
-    {}
+  def step0_attributes
+    { :graphics_ki => 1 }
+  end
+  
+  def step1_attributes
+    { :graphics_ki_text => "blah" }
+  end
+  
+  def step2_attributes
+    { :graphics_kt => 2 }
+  end
+  
+  def step3_attributes
+    { :graphics_kt_text => "foo" }
+  end
+  
+  def step4_attributes
+    { :graphics_it => 3 }
+  end
+  
+  def step5_attributes
+    { :graphics_it_text => "bar" }
+  end
+  
+  def step6_attributes
+    { :k_def => "foo", :i_def => "bar", :t_def => "baz", :kit => "blah" }
+  end
+  
+  def step7_attributes
+    { :context => "foo", :domain => "bar" }
   end
   
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # GraphicsController. Be sure to keep this updated too.
   def valid_session
-    {}
+    { :session_id => "woot" }
+  end
+  
+  def auth_admin
+    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("#{ENV["ADMIN_USER"]}:#{ENV["ADMIN_PASS"]}")
+  end
+  
+  before(:each) do
+    @participant = FactoryGirl.create(:participant, :session_id => "woot")
   end
 
   describe "GET index" do
+    before(:each) do
+      auth_admin
+    end
     it "assigns all graphics as @graphics" do
-      graphic = Graphic.create! valid_attributes
+      graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
       get :index, {}, valid_session
       assigns(:graphics).should eq([graphic])
     end
   end
 
   describe "GET show" do
+    before(:each) do
+      auth_admin
+    end
     it "assigns the requested graphic as @graphic" do
-      graphic = Graphic.create! valid_attributes
+      graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
       get :show, {:id => graphic.to_param}, valid_session
       assigns(:graphic).should eq(graphic)
     end
@@ -57,31 +100,28 @@ describe GraphicsController do
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested graphic as @graphic" do
-      graphic = Graphic.create! valid_attributes
-      get :edit, {:id => graphic.to_param}, valid_session
-      assigns(:graphic).should eq(graphic)
-    end
-  end
-
   describe "POST create" do
     describe "with valid params" do
       it "creates a new Graphic" do
         expect {
-          post :create, {:graphic => valid_attributes}, valid_session
+          post :create, {:graphic => step0_attributes}, valid_session
         }.to change(Graphic, :count).by(1)
       end
 
       it "assigns a newly created graphic as @graphic" do
-        post :create, {:graphic => valid_attributes}, valid_session
+        post :create, {:graphic => step0_attributes}, valid_session
         assigns(:graphic).should be_a(Graphic)
         assigns(:graphic).should be_persisted
       end
 
       it "redirects to the created graphic" do
-        post :create, {:graphic => valid_attributes}, valid_session
-        response.should redirect_to(Graphic.last)
+        post :create, {:graphic => step0_attributes}, valid_session
+        response.should redirect_to(new_graphic_path)
+      end
+      
+      it "should have step = 1" do
+        post :create, {:graphic => step0_attributes}, valid_session
+        assigns(:graphic).step.should == 1
       end
     end
 
@@ -97,7 +137,7 @@ describe GraphicsController do
         # Trigger the behavior that occurs when invalid params are submitted
         Graphic.any_instance.stub(:save).and_return(false)
         post :create, {:graphic => {}}, valid_session
-        response.should render_template("new")
+        response.should render_template("step0")
       end
     end
   end
@@ -105,7 +145,7 @@ describe GraphicsController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested graphic" do
-        graphic = Graphic.create! valid_attributes
+        graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
         # Assuming there are no other graphics in the database, this
         # specifies that the Graphic created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -115,21 +155,21 @@ describe GraphicsController do
       end
 
       it "assigns the requested graphic as @graphic" do
-        graphic = Graphic.create! valid_attributes
-        put :update, {:id => graphic.to_param, :graphic => valid_attributes}, valid_session
+        graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
+        put :update, {:id => graphic.to_param, :graphic => step1_attributes}, valid_session
         assigns(:graphic).should eq(graphic)
       end
 
       it "redirects to the graphic" do
-        graphic = Graphic.create! valid_attributes
-        put :update, {:id => graphic.to_param, :graphic => valid_attributes}, valid_session
-        response.should redirect_to(graphic)
+        graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
+        put :update, {:id => graphic.to_param, :graphic => step1_attributes}, valid_session
+        response.should redirect_to(new_graphic_path)
       end
     end
 
     describe "with invalid params" do
       it "assigns the graphic as @graphic" do
-        graphic = Graphic.create! valid_attributes
+        graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
         # Trigger the behavior that occurs when invalid params are submitted
         Graphic.any_instance.stub(:save).and_return(false)
         put :update, {:id => graphic.to_param, :graphic => {}}, valid_session
@@ -137,25 +177,28 @@ describe GraphicsController do
       end
 
       it "re-renders the 'edit' template" do
-        graphic = Graphic.create! valid_attributes
+        graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id, :step => 3)
         # Trigger the behavior that occurs when invalid params are submitted
         Graphic.any_instance.stub(:save).and_return(false)
         put :update, {:id => graphic.to_param, :graphic => {}}, valid_session
-        response.should render_template("edit")
+        response.should render_template("graphics/steps/step3")
       end
     end
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      auth_admin
+    end
     it "destroys the requested graphic" do
-      graphic = Graphic.create! valid_attributes
+      graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
       expect {
         delete :destroy, {:id => graphic.to_param}, valid_session
       }.to change(Graphic, :count).by(-1)
     end
 
     it "redirects to the graphics list" do
-      graphic = Graphic.create! valid_attributes
+      graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
       delete :destroy, {:id => graphic.to_param}, valid_session
       response.should redirect_to(graphics_url)
     end

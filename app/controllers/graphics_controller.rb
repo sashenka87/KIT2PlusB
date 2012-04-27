@@ -46,7 +46,7 @@ class GraphicsController < ApplicationController
         format.html { redirect_to new_graphic_path }
         # format.json { render json: @graphic, status: :created, location: @graphic }
       else
-        format.html { render "graphics/steps/step#{@graphic.step - 1}" }
+        format.html { render "graphics/steps/step0" }
         # format.json { render json: @graphic.errors, status: :unprocessable_entity }
       end
     end

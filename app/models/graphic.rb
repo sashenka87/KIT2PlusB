@@ -31,10 +31,10 @@ class Graphic < ActiveRecord::Base
   validates_presence_of :participant_id
   validates_presence_of :graphics_ki
   validates_presence_of :graphics_ki_text, :if => Proc.new{ |f| f.step > 1 }
-  validates_presence_of :graphics_it, :if => Proc.new{ |f| f.step > 2 }
-  validates_presence_of :graphics_it_text, :if => Proc.new{ |f| f.step > 3 }
-  validates_presence_of :graphics_kt, :if => Proc.new{ |f| f.step > 4 }
-  validates_presence_of :graphics_kt_text, :if => Proc.new{ |f| f.step > 5 }
+  validates_presence_of :graphics_kt, :if => Proc.new{ |f| f.step > 2 }
+  validates_presence_of :graphics_kt_text, :if => Proc.new{ |f| f.step > 3 }
+  validates_presence_of :graphics_it, :if => Proc.new{ |f| f.step > 4 }
+  validates_presence_of :graphics_it_text, :if => Proc.new{ |f| f.step > 5 }
   validates_presence_of :k_def, :if => Proc.new{ |f| f.step > 6 }
   validates_presence_of :i_def, :if => Proc.new{ |f| f.step > 6 }
   validates_presence_of :t_def, :if => Proc.new{ |f| f.step > 6 }
