@@ -5,6 +5,7 @@ KIT2PlusB::Application.routes.draw do
   match '/goodbye' => 'pages#goodbye', :as => "goodbye", :via => :get
 
   resources :participants, :except => [:edit, :update]
+  resources :demographics, :except => [:edit, :update]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

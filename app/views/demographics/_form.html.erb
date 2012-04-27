@@ -1,0 +1,55 @@
+<%= form_for(@demographic) do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+
+  <div class="field">
+    <%= f.label :participant_id %><br />
+    <%= f.number_field :participant_id %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.number_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br />
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :ethnicity %><br />
+    <%= f.text_field :ethnicity %>
+  </div>
+  <div class="field">
+    <%= f.label :major %><br />
+    <%= f.text_field :major %>
+  </div>
+  <div class="field">
+    <%= f.label :year_university %><br />
+    <%= f.number_field :year_university %>
+  </div>
+  <div class="field">
+    <%= f.label :gpa %><br />
+    <%= f.text_field :gpa %>
+  </div>
+  <div class="field">
+    <%= f.label :country_of_residence %><br />
+    <%= f.text_field :country_of_residence %>
+  </div>
+  <div class="field">
+    <%= f.label :country_of_birth %><br />
+    <%= f.text_field :country_of_birth %>
+  </div>
+  <div class="field">
+    <%= f.label :country_of_schooling %><br />
+    <%= f.text_field :country_of_schooling %>
+  </div>
+  <div class="field">
+    <%= f.label :native_english %><br />
+    <%= f.check_box :native_english %>
+  </div>
+  <div class="field">
+    <%= f.label :native_language %><br />
+    <%= f.text_field :native_language %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

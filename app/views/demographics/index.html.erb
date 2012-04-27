@@ -1,0 +1,44 @@
+<h1>Listing demographics</h1>
+
+<table>
+  <tr>
+    <th>Participant</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Ethnicity</th>
+    <th>Major</th>
+    <th>Year university</th>
+    <th>Gpa</th>
+    <th>Country of residence</th>
+    <th>Country of birth</th>
+    <th>Country of schooling</th>
+    <th>Native english</th>
+    <th>Native language</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @demographics.each do |demographic| %>
+  <tr>
+    <td><%= demographic.participant_id %></td>
+    <td><%= demographic.gender %></td>
+    <td><%= demographic.age %></td>
+    <td><%= demographic.ethnicity %></td>
+    <td><%= demographic.major %></td>
+    <td><%= demographic.year_university %></td>
+    <td><%= demographic.gpa %></td>
+    <td><%= demographic.country_of_residence %></td>
+    <td><%= demographic.country_of_birth %></td>
+    <td><%= demographic.country_of_schooling %></td>
+    <td><%= demographic.native_english %></td>
+    <td><%= demographic.native_language %></td>
+    <td><%= link_to 'Show', demographic %></td>
+    <td><%= link_to 'Destroy', demographic, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Demographic', new_demographic_path %>
