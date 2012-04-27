@@ -20,4 +20,9 @@ class Participant < ActiveRecord::Base
   
   validates_presence_of :session_id
   validates_presence_of :ip_address
+  
+  validates_presence_of :country
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_presence_of :instructor
 end

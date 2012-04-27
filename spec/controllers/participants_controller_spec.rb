@@ -25,7 +25,7 @@ describe ParticipantsController do
   # Participant. As you add validations to Participant, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    { :first_name => "alex", :last_name => "list", :instructor => "dr a", :country => "usa"}
   end
   
   # This should return the minimal set of values that should be in the session
