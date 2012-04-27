@@ -27,7 +27,7 @@ class GraphicsController < ApplicationController
     @graphic = Graphic.new
 
     respond_to do |format|
-      format.html { render 'graphics/steps/step0' }
+      format.html { render 'graphics/steps/step1' }
       format.json { render json: @graphic }
     end
   end
