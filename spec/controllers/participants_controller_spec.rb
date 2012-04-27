@@ -19,6 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe ParticipantsController do
+  render_views
 
   # This should return the minimal set of attributes required to create a valid
   # Participant. As you add validations to Participant, be sure to
@@ -35,6 +36,10 @@ describe ParticipantsController do
   end
 
   describe "GET index" do
+    before(:each) do
+      @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("#{ENV["ADMIN_USER"]}:#{ENV["ADMIN_PASS"]}")
+    end
+    
     it "assigns all participants as @participants" do
       participant = Participant.create! valid_attributes
       get :index, {}, valid_session
@@ -43,6 +48,10 @@ describe ParticipantsController do
   end
 
   describe "GET show" do
+    before(:each) do
+      @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("#{ENV["ADMIN_USER"]}:#{ENV["ADMIN_PASS"]}")
+    end
+    
     it "assigns the requested participant as @participant" do
       participant = Participant.create! valid_attributes
       get :show, {:id => participant.to_param}, valid_session
@@ -147,6 +156,10 @@ describe ParticipantsController do
   # end
 
   describe "DELETE destroy" do
+    before(:each) do
+      @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("#{ENV["ADMIN_USER"]}:#{ENV["ADMIN_PASS"]}")
+    end
+    
     it "destroys the requested participant" do
       participant = Participant.create! valid_attributes
       expect {

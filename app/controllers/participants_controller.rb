@@ -1,4 +1,6 @@
 class ParticipantsController < ApplicationController
+  before_filter :authenticate_admin, :only => [:index, :show, :destroy]
+
   # GET /participants
   # GET /participants.json
   def index
@@ -32,11 +34,6 @@ class ParticipantsController < ApplicationController
     end
   end
 
-  # GET /participants/1/edit
-  def edit
-    @participant = Participant.find(params[:id])
-  end
-
   # POST /participants
   # POST /participants.json
   def create
@@ -53,22 +50,6 @@ class ParticipantsController < ApplicationController
     end
   end
 
-  # PUT /participants/1
-  # PUT /participants/1.json
-  def update
-    @participant = Participant.find(params[:id])
-
-    respond_to do |format|
-      if @participant.update_attributes(params[:participant])
-        format.html { redirect_to @participant, notice: 'Participant was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @participant.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /participants/1
   # DELETE /participants/1.json
   def destroy
@@ -78,6 +59,14 @@ class ParticipantsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to participants_url }
       format.json { head :no_content }
+    end
+  end
+  
+  private
+  
+  def authenticate_admin
+    authenticate_or_request_with_http_basic do |user, password|
+      user == ENV["ADMIN_USER"] && password == ENV["ADMIN_PASS"]
     end
   end
 end
