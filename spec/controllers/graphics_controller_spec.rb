@@ -160,10 +160,17 @@ describe GraphicsController do
         assigns(:graphic).should eq(graphic)
       end
 
-      it "redirects to the graphic" do
+      it "redirects to the next question" do
         graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id)
         put :update, {:id => graphic.to_param, :graphic => step1_attributes}, valid_session
         response.should redirect_to(new_graphic_path)
+      end
+      
+      it "should increase the step number by one" do
+        graphic = FactoryGirl.create(:graphic, :participant_id => @participant.id, :step => 2)
+        put :update, {:id => graphic.to_param, :graphic => step1_attributes}, valid_session
+        graphic.reload
+        graphic.step.should == 3
       end
     end
 
