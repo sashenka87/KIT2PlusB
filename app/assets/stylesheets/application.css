@@ -19,3 +19,11 @@
 .center {
 	text-align:center;
 }
+
+.red {
+	color: red;
+}
+
+.back-red{
+	background-color:red;
+}
