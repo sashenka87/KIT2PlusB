@@ -8,8 +8,8 @@ $(function(){
 		}
 	);
 	$(".hover_to_x").click(function(){
-		$(".hover_to_x").html(".");
-		$(".hover_to_x").removeClass("selected_x");
+		$(this).siblings().html(".");
+		$(this).siblings().removeClass("selected_x");
 		$(this).html('<span class="red">X</span>');
 		$(this).addClass("selected_x");
 	});
