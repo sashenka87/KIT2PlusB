@@ -107,5 +107,10 @@ class GraphicsController < ApplicationController
       flash[:alert] = "Sorry we need you to consent first."
       redirect_to new_participant_path
     end
+    
+    if @participant.demographic.nil?
+      flash[:alert] = "Sorry we need your demographic info first."
+      redirect_to new_demographic_path
+    end
   end
 end

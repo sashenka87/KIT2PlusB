@@ -69,6 +69,7 @@ describe GraphicsController do
   
   before(:each) do
     @participant = FactoryGirl.create(:participant, :session_id => "woot")
+    @demographic = FactoryGirl.create(:demographic, :participant_id => @participant.id)
   end
 
   describe "GET index" do
@@ -97,6 +98,12 @@ describe GraphicsController do
     it "assigns a new graphic as @graphic" do
       get :new, {}, valid_session
       assigns(:graphic).should be_a_new(Graphic)
+    end
+    
+    it "should redirect to the new_demographic page" do
+      @demographic.destroy
+      get :new, {}, valid_session
+      response.should redirect_to(new_demographic_path)
     end
   end
 
