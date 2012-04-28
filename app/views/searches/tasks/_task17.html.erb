@@ -2,13 +2,13 @@
   How confident are you in your response?
 </p>
 
-<div class="task10">
+<div class="task17">
   <%= render "shared/mm_line", :num => 100 %>
-  <%= f.hidden_field :confidence_discrete, :class => "mmline_value" %>
+  <%= f.hidden_field :confidence_open, :class => "mmline_value" %>
 </div>
 
 <p class="instructions">
   Please explain.
 </p>
 
-<%= f.text_area :confidentwhy_discrete, :row => 5 %>
+<%= f.text_area :confidentwhy_open, :row => 5 %>
