@@ -29,6 +29,11 @@ class GraphicsController < ApplicationController
   def new    
     @graphic = current_graphic || Graphic.new
 
+    if @graphic.step > 7
+      redirect_to new_search_path
+      return
+    end
+
     respond_to do |format|
       format.html { render "graphics/steps/step#{@graphic.step}" }
       format.json { render json: @graphic }
