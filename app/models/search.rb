@@ -51,8 +51,8 @@ class Search < ActiveRecord::Base
   validates_presence_of :d_interest_psyc,  :if => Proc.new{ |f| f.step > 1 }
   validates_presence_of :t_interest_psyc,  :if => Proc.new{ |f| f.step > 1 }
   
-  validates_presence_of :answer_open, :if => Proc.new{ |f| f.step > 2 && (f.ad_test == 0 || f.ad_test == 3) }
-  validates_presence_of :answer_discrete, :if => Proc.new{ |f| f.step > 2 && (f.ad_test == 1 || f.ad_test == 2) }
+  validates_presence_of :answer_open, :if => Proc.new{ |f| (f.step > 2 && (f.ad_test == 0 || f.ad_test == 3)) || (f.step > 4 && (f.ad_test == 1 || f.ad_test == 2)) }
+  validates_presence_of :answer_discrete, :if => Proc.new{ |f| (f.step > 2 && (f.ad_test == 1 || f.ad_test == 2)) || (f.step > 4 && (f.ad_test == 0 || f.ad_test == 3)) }
   
   validates_presence_of :confidence_discrete, :if => Proc.new{ |f| f.step > 3 }
   validates_presence_of :confidencewhy_discrete, :if => Proc.new{ |f| f.step > 3 }
