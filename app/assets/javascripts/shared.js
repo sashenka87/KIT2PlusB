@@ -12,7 +12,7 @@ $(function(){
 		$(this).siblings().removeClass("selected_x");
 		$(this).html('<span class="red">X</span>');
 		$(this).addClass("selected_x");
-		$(".selected_x").first().parent().parent().parent().find(".mmline_value").val(
+		$(this).parent().parent().parent().find(".mmline_value").val(
 			$(this).data('value')
 		);
 	});
