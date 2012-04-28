@@ -24,20 +24,50 @@ describe SearchesController do
   # This should return the minimal set of attributes required to create a valid
   # Search. As you add validations to Search, be sure to
   # update the return value of this method accordingly.
-  def valid_attributes
-    {}
+  def step0_attributes
+    { :d_know_astro => 50, :d_know_psyc => 54, :t_know_astro => 73, :t_know_psyc => 92 }
+  end
+  
+  def step1_attributes
+    { :d_interest_astro => 23, :d_interest_psyc => 43, :t_interest_astro => 12, :t_interest_psyc => 85 }
+  end
+  
+  def step2_attributes
+    { :answer_discrete => "text" }
+  end
+  
+  def step3_attributes
+    { :confidence_discrete => 12, :confidencewhy_discrete => "blah" }
+  end
+  
+  def step4_attributes
+    { :answer_open => "blah" }
+  end
+  
+  def step5_attributes
+    { :confidence_open => 65, :confidencewhy_open => "bar" }
   end
   
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # SearchesController. Be sure to keep this updated too.
   def valid_session
-    {}
+    { :session_id => "woot"}
+  end
+  
+  def auth_admin
+    @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("#{ENV["ADMIN_USER"]}:#{ENV["ADMIN_PASS"]}")
+  end
+  
+  before(:each) do
+    @participant = FactoryGirl.create(:participant, :session_id => "woot")
+    @demographic = FactoryGirl.create(:demographic, :participant_id => @participant.id)
+    @graphic     = FactoryGirl.create(:graphic, :participant_id => @participant.id)
   end
 
   describe "GET index" do
     it "assigns all searches as @searches" do
-      search = Search.create! valid_attributes
+      search = FactoryGirl.create(:search, :participant_id => @participant.id)
       get :index, {}, valid_session
       assigns(:searches).should eq([search])
     end
@@ -45,7 +75,7 @@ describe SearchesController do
 
   describe "GET show" do
     it "assigns the requested search as @search" do
-      search = Search.create! valid_attributes
+      search = FactoryGirl.create(:search, :participant_id => @participant.id)
       get :show, {:id => search.to_param}, valid_session
       assigns(:search).should eq(search)
     end
@@ -62,18 +92,18 @@ describe SearchesController do
     describe "with valid params" do
       it "creates a new Search" do
         expect {
-          post :create, {:search => valid_attributes}, valid_session
+          post :create, {:search => step0_attributes}, valid_session
         }.to change(Search, :count).by(1)
       end
 
       it "assigns a newly created search as @search" do
-        post :create, {:search => valid_attributes}, valid_session
+        post :create, {:search => step0_attributes}, valid_session
         assigns(:search).should be_a(Search)
         assigns(:search).should be_persisted
       end
 
       it "redirects to the created search" do
-        post :create, {:search => valid_attributes}, valid_session
+        post :create, {:search => step0_attributes}, valid_session
         response.should redirect_to(Search.last)
       end
     end
@@ -98,7 +128,7 @@ describe SearchesController do
   describe "PUT update" do
     describe "with valid params" do
       it "updates the requested search" do
-        search = Search.create! valid_attributes
+        search = FactoryGirl.create(:search, :participant_id => @participant.id)
         # Assuming there are no other searches in the database, this
         # specifies that the Search created on the previous line
         # receives the :update_attributes message with whatever params are
@@ -108,21 +138,21 @@ describe SearchesController do
       end
 
       it "assigns the requested search as @search" do
-        search = Search.create! valid_attributes
-        put :update, {:id => search.to_param, :search => valid_attributes}, valid_session
+        search = FactoryGirl.create(:search, :participant_id => @participant.id)
+        put :update, {:id => search.to_param, :search => step1_attributes}, valid_session
         assigns(:search).should eq(search)
       end
 
       it "redirects to the search" do
-        search = Search.create! valid_attributes
-        put :update, {:id => search.to_param, :search => valid_attributes}, valid_session
+        search = FactoryGirl.create(:search, :participant_id => @participant.id)
+        put :update, {:id => search.to_param, :search => step1_attributes}, valid_session
         response.should redirect_to(search)
       end
     end
 
     describe "with invalid params" do
       it "assigns the search as @search" do
-        search = Search.create! valid_attributes
+        search = FactoryGirl.create(:search, :participant_id => @participant.id)
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
         put :update, {:id => search.to_param, :search => {}}, valid_session
@@ -130,7 +160,7 @@ describe SearchesController do
       end
 
       it "redirects to the new_search_path" do
-        search = Search.create! valid_attributes
+        search = FactoryGirl.create(:search, :participant_id => @participant.id)
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
         put :update, {:id => search.to_param, :search => {}}, valid_session
@@ -141,14 +171,14 @@ describe SearchesController do
 
   describe "DELETE destroy" do
     it "destroys the requested search" do
-      search = Search.create! valid_attributes
+      search = FactoryGirl.create(:search, :participant_id => @participant.id)
       expect {
         delete :destroy, {:id => search.to_param}, valid_session
       }.to change(Search, :count).by(-1)
     end
 
     it "redirects to the searches list" do
-      search = Search.create! valid_attributes
+      search = FactoryGirl.create(:search, :participant_id => @participant.id)
       delete :destroy, {:id => search.to_param}, valid_session
       response.should redirect_to(searches_url)
     end

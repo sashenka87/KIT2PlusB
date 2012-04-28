@@ -25,5 +25,7 @@
 #
 
 class Search < ActiveRecord::Base
-  attr_accessible :answer_discrete, :answer_open, :confidence_discrete, :confidence_open, :confidencewhy_discrete, :confidencewhy_open, :d_interest_astro, :d_interest_psyc, :d_know_astro, :d_know_psyc, :participant_id, :t_interest_astro, :t_interest_psyc, :t_know_astro, :t_know_psyc
+  attr_accessible :answer_discrete, :answer_open, :confidence_discrete, :confidence_open, :confidencewhy_discrete
+  attr_accessible :confidencewhy_open, :d_interest_astro, :d_interest_psyc, :d_know_astro, :d_know_psyc
+  attr_accessible :t_interest_astro, :t_interest_psyc, :t_know_astro, :t_know_psyc
 end
