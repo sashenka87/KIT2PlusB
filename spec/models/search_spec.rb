@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20120428040203
+# Schema version: 20120428045515
 #
 # Table name: searches
 #
@@ -22,6 +22,7 @@
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
 #  step                   :integer         default(0)
+#  ad_test                :integer
 #
 
 require 'spec_helper'
