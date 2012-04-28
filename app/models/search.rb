@@ -37,4 +37,12 @@ class Search < ActiveRecord::Base
   before_validation(:on => :create) do
     self.ad_test = rand(4)
   end
+  
+  validates_presence_of :ad_test
+  validates_presence_of :participant_id
+
+  validates_presence_of :d_know_astro, :if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :t_know_astro, :if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :d_know_psyc,  :if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :t_know_psyc,  :if => Proc.new{ |f| f.step > 0 }
 end
