@@ -1,0 +1,75 @@
+<%- model_class = @search.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:participant_id) %>:</strong><br>
+  <%= @search.participant_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:d_know_astro) %>:</strong><br>
+  <%= @search.d_know_astro %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:d_know_psyc) %>:</strong><br>
+  <%= @search.d_know_psyc %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:t_know_astro) %>:</strong><br>
+  <%= @search.t_know_astro %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:t_know_psyc) %>:</strong><br>
+  <%= @search.t_know_psyc %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:d_interest_astro) %>:</strong><br>
+  <%= @search.d_interest_astro %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:d_interest_psyc) %>:</strong><br>
+  <%= @search.d_interest_psyc %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:t_interest_astro) %>:</strong><br>
+  <%= @search.t_interest_astro %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:t_interest_psyc) %>:</strong><br>
+  <%= @search.t_interest_psyc %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:confidence_discrete) %>:</strong><br>
+  <%= @search.confidence_discrete %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:confidence_open) %>:</strong><br>
+  <%= @search.confidence_open %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:answer_discrete) %>:</strong><br>
+  <%= @search.answer_discrete %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:answer_open) %>:</strong><br>
+  <%= @search.answer_open %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:confidencewhy_discrete) %>:</strong><br>
+  <%= @search.confidencewhy_discrete %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:confidencewhy_open) %>:</strong><br>
+  <%= @search.confidencewhy_open %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              searches_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_search_path(@search), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              search_path(@search),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

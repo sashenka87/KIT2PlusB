@@ -1,0 +1,28 @@
+# == Schema Information
+# Schema version: 20120428034633
+#
+# Table name: searches
+#
+#  id                     :integer         not null, primary key
+#  participant_id         :integer
+#  d_know_astro           :integer
+#  d_know_psyc            :integer
+#  t_know_astro           :integer
+#  t_know_psyc            :integer
+#  d_interest_astro       :integer
+#  d_interest_psyc        :integer
+#  t_interest_astro       :integer
+#  t_interest_psyc        :integer
+#  confidence_discrete    :integer
+#  confidence_open        :integer
+#  answer_discrete        :text
+#  answer_open            :text
+#  confidencewhy_discrete :text
+#  confidencewhy_open     :text
+#  created_at             :datetime        not null
+#  updated_at             :datetime        not null
+#
+
+class Search < ActiveRecord::Base
+  attr_accessible :answer_discrete, :answer_open, :confidence_discrete, :confidence_open, :confidencewhy_discrete, :confidencewhy_open, :d_interest_astro, :d_interest_psyc, :d_know_astro, :d_know_psyc, :participant_id, :t_interest_astro, :t_interest_psyc, :t_know_astro, :t_know_psyc
+end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120427193221) do
+ActiveRecord::Schema.define(:version => 20120428034633) do
 
   create_table "demographics", :force => true do |t|
     t.integer  "participant_id"
@@ -59,6 +59,26 @@ ActiveRecord::Schema.define(:version => 20120427193221) do
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
     t.integer  "current_question", :default => 0
+  end
+
+  create_table "searches", :force => true do |t|
+    t.integer  "participant_id"
+    t.integer  "d_know_astro"
+    t.integer  "d_know_psyc"
+    t.integer  "t_know_astro"
+    t.integer  "t_know_psyc"
+    t.integer  "d_interest_astro"
+    t.integer  "d_interest_psyc"
+    t.integer  "t_interest_astro"
+    t.integer  "t_interest_psyc"
+    t.integer  "confidence_discrete"
+    t.integer  "confidence_open"
+    t.text     "answer_discrete"
+    t.text     "answer_open"
+    t.text     "confidencewhy_discrete"
+    t.text     "confidencewhy_open"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
   end
 
 end

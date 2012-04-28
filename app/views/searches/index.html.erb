@@ -1,0 +1,62 @@
+<%- model_class = Search.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:participant_id) %></th>
+      <th><%= model_class.human_attribute_name(:d_know_astro) %></th>
+      <th><%= model_class.human_attribute_name(:d_know_psyc) %></th>
+      <th><%= model_class.human_attribute_name(:t_know_astro) %></th>
+      <th><%= model_class.human_attribute_name(:t_know_psyc) %></th>
+      <th><%= model_class.human_attribute_name(:d_interest_astro) %></th>
+      <th><%= model_class.human_attribute_name(:d_interest_psyc) %></th>
+      <th><%= model_class.human_attribute_name(:t_interest_astro) %></th>
+      <th><%= model_class.human_attribute_name(:t_interest_psyc) %></th>
+      <th><%= model_class.human_attribute_name(:confidence_discrete) %></th>
+      <th><%= model_class.human_attribute_name(:confidence_open) %></th>
+      <th><%= model_class.human_attribute_name(:answer_discrete) %></th>
+      <th><%= model_class.human_attribute_name(:answer_open) %></th>
+      <th><%= model_class.human_attribute_name(:confidencewhy_discrete) %></th>
+      <th><%= model_class.human_attribute_name(:confidencewhy_open) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @searches.each do |search| %>
+      <tr>
+        <td><%= link_to search.id, search_path(search) %></td>
+        <td><%= search.participant_id %></td>
+        <td><%= search.d_know_astro %></td>
+        <td><%= search.d_know_psyc %></td>
+        <td><%= search.t_know_astro %></td>
+        <td><%= search.t_know_psyc %></td>
+        <td><%= search.d_interest_astro %></td>
+        <td><%= search.d_interest_psyc %></td>
+        <td><%= search.t_interest_astro %></td>
+        <td><%= search.t_interest_psyc %></td>
+        <td><%= search.confidence_discrete %></td>
+        <td><%= search.confidence_open %></td>
+        <td><%= search.answer_discrete %></td>
+        <td><%= search.answer_open %></td>
+        <td><%= search.confidencewhy_discrete %></td>
+        <td><%= search.confidencewhy_open %></td>
+        <td><%=l search.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_search_path(search), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      search_path(search),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_search_path,
+            :class => 'btn btn-primary' %>

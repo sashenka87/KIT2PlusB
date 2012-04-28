@@ -7,6 +7,7 @@ KIT2PlusB::Application.routes.draw do
   resources :participants, :except => [:edit, :update]
   resources :demographics, :except => [:edit, :update]
   resources :graphics,     :except => [:edit]
+  resources :searches
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
