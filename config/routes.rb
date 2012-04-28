@@ -1,5 +1,13 @@
 KIT2PlusB::Application.routes.draw do
-  resources :participants
+  root :to => 'pages#welcome'
+
+  match '/welcome' => 'pages#welcome', :as => "welcome", :via => :get
+  match '/goodbye' => 'pages#goodbye', :as => "goodbye", :via => :get
+
+  resources :participants, :except => [:edit, :update]
+  resources :demographics, :except => [:edit, :update]
+  resources :graphics,     :except => [:edit]
+  resources :searches,     :except => [:edit]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -48,7 +56,7 @@ KIT2PlusB::Application.routes.draw do
   #     resources :products
   #   end
 
-  # You can have the root of your site routed with "root"
+  # You can have the of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 

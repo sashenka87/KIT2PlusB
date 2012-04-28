@@ -1,0 +1,28 @@
+<h1>Graphics Task</h1>
+<br>
+<p class="instructions">
+  Now that you have explained your understanding of the relation between knowledge, information, and truth.
+</p>
+
+<br>
+<%= form_for @graphic, :html => { :class => 'form-vertical' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+
+  <p class="instructions">
+    Do you think this representation holds regardless of context (e.g. academic or personal)? Please explain.
+  </p>
+  <div class="control-group">
+    <%= f.text_area :context, :class => "span8", :rows => 7, :placeholder => "Academic or personal context" %>
+  </div>
+  
+  <p class="instructions">
+    Now think about the subjects of psychology and physics. Do you think your representation holds across these subjects?
+  </p>
+  <div class="control-group">
+    <%= f.text_area :domain, :class => "span8", :rows => 7, :placeholder => "Domain of psychology or physics" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

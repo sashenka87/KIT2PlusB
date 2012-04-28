@@ -26,8 +26,6 @@
         <td><%= participant.country %></td>
         <td><%=l participant.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_participant_path(participant), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       participant_path(participant),
                       :method => :delete,

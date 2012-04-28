@@ -1,0 +1,61 @@
+<%- model_class = @graphic.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:participant_id) %>:</strong><br>
+  <%= @graphic.participant_id %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:graphics_ki) %>:</strong><br>
+  <%= @graphic.graphics_ki %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:graphics_ki_text) %>:</strong><br>
+  <%= @graphic.graphics_ki_text %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:graphics_kt) %>:</strong><br>
+  <%= @graphic.graphics_kt %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:graphics_it) %>:</strong><br>
+  <%= @graphic.graphics_it %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:graphics_it_text) %>:</strong><br>
+  <%= @graphic.graphics_it_text %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:k_def) %>:</strong><br>
+  <%= @graphic.k_def %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:i_def) %>:</strong><br>
+  <%= @graphic.i_def %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:t_def) %>:</strong><br>
+  <%= @graphic.t_def %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:kit) %>:</strong><br>
+  <%= @graphic.kit %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:context) %>:</strong><br>
+  <%= @graphic.context %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:domain) %>:</strong><br>
+  <%= @graphic.domain %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              graphics_path, :class => 'btn'  %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              graphic_path(@graphic),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,98 @@
+<%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :participant_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :participant_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :d_know_astro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :d_know_astro, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :d_know_psyc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :d_know_psyc, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :t_know_astro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :t_know_astro, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :t_know_psyc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :t_know_psyc, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :d_interest_astro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :d_interest_astro, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :d_interest_psyc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :d_interest_psyc, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :t_interest_astro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :t_interest_astro, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :t_interest_psyc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :t_interest_psyc, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :confidence_discrete, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :confidence_discrete, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :confidence_open, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :confidence_open, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :answer_discrete, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :answer_discrete, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :answer_open, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :answer_open, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :confidencewhy_discrete, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :confidencewhy_discrete, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :confidencewhy_open, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :confidencewhy_open, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                searches_path, :class => 'btn' %>
+  </div>
+<% end %>

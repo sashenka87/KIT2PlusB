@@ -3,6 +3,8 @@
 *.rbc
 *.sassc
 .sass-cache
+.env
+
 capybara-*.html
 .rspec
 /.bundle

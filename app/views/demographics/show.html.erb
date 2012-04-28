@@ -1,0 +1,56 @@
+<%- model_class = @demographic.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<p>
+  <strong><%= model_class.human_attribute_name(:gender) %>:</strong><br>
+  <%= @demographic.gender %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:age) %>:</strong><br>
+  <%= @demographic.age %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:ethnicity) %>:</strong><br>
+  <%= @demographic.ethnicity %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:major) %>:</strong><br>
+  <%= @demographic.major %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:year_university) %>:</strong><br>
+  <%= @demographic.year_university %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:gpa) %>:</strong><br>
+  <%= @demographic.gpa %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:country_of_residence) %>:</strong><br>
+  <%= @demographic.country_of_residence %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:country_of_birth) %>:</strong><br>
+  <%= @demographic.country_of_birth %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:country_of_schooling) %>:</strong><br>
+  <%= @demographic.country_of_schooling %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:native_english) %>:</strong><br>
+  <%= @demographic.native_english %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:native_language) %>:</strong><br>
+  <%= @demographic.native_language %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              demographics_path, :class => 'btn'  %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              demographic_path(@demographic),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,4 +1,104 @@
-<%- model_class = @participant.class -%>
-<h1><%=t '.title', :default => t('helpers.titles.new', :model => model_class.model_name.human,
-                               :default => "New #{model_class.model_name.human}") %></h1>
-<%= render :partial => 'form' %>
+<h1>Consent Form # 09-0329</h1>
+<br>
+<table class="table table-bordered table-striped">
+  <tbody>
+    <tr>
+      <td>Project Title</td>
+      <td>Knowledge, Information, and Truth in an Online World</td>
+    </tr>
+    <tr>
+      <td>Why is this research being done?</td>
+      <td>
+        <p>
+          This is a research project being conducted by researchers at the University of Maryland, College Park, USA. 
+          We are inviting you to participate in this research project because you are an undergraduate or graduate student in university.
+        </p>
+        <p>
+          Technological advances have brought about vast changes in the worlds of information and communication in recent years. Students growing up immersed in a high-speed, trend-conscious, constantly-connected culture may have experienced a consequent shift in their understandings of the interrelated constructs of knowledge, information, and truth. The purpose of this research project is to investigate this possible shift, by taking the initial step of inquiring about students' understandings of these constructs.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>What will I be asked to do?</td>
+      <td>
+        <p>
+          The procedures involve completing a series of three measures in a computer-based environment that supports a simulated online (i.e., world wide web) search task. These measures will be completed outside the classroom or regular class time. Participation will require access to a computer with an Internet connection. If you do not have access to your own personal computer, you will be directed to computer labs on campus. You will be directed how to access the website supporting this environment in a handout provided by your instructor; in addition, you will be encouraged to contact the researchers if you need assistance.
+        </p>
+        <p>
+          All data collected will be stored on an external server. Data will be sent from the student's personal computer to a secure external server. First, you will complete the consent form and a demographic information sheet. Next, you will select from graphic representations of the interrelations between knowledge, information, and truth, define these terms, and provide an explanation. You will be asked about your background knowledge and interest. You will then perform a search task that addresses first a factual and then a more interpretive question regarding astrophysics and developmental psychology, using a set of 7 possible sources. During this task, data will be collected including: source accessed, duration of access, and source evaluation. Finally, you will complete a questionnaire about your beliefs and attitudes towards inquiry; this involves completing the same set of 41 items twice, for two different contexts. Completion of all measures is expected to take approximately 45 minutes.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>What about confidentiality?</td>
+      <td>
+        <p>
+          We will do our best to keep your personal information confidential. To help protect your confidentiality, (1) your name will not be included on the surveys and other collected data; (2) a code will be placed on the survey and other collected data; (3) through the use of an identification key, the researcher will be able to link your survey to your identity; and (4) only the researcher will have access to the identification key. For open-ended responses, only brief quotations will be used, if at all, and care will be taken not to reveal your identity through the use of quotes. These steps ensure that participants' personal information will not be associated with the collected data.
+        </p>
+        <p>
+          All data, including a USB drive containing completed measures and logfiles, will remain in a locked filing cabinet for a period of five years. This cabinet is located in the Disciplined Reading and Learning Research Lab (Room 3240 Benjamin Building, Department of Human Development, University of Maryland, College Park, MD 20742, USA). After this time, the data will be either destroyed or boxed and moved to another secure storage facility. If destruction is deemed appropriate, the paper documents will be shredded and placed in a storage container, and the USB drive will be erased.
+        </p>
+        <p>
+          Access to these data will be limited to: the student investigators (doctoral students in the Disciplined Reading and Learning Research Lab), and the primary investigator (a tenured full professor in the Department of Human Development). These graduate students are instructed as to the ethical nature of data collections and the importance of maintaining the confidentiality of study participants.
+        </p>
+        <p>
+          If we write a report or article about this research project, your identity will be protected to the maximum extent possible. Your information may be shared with representatives of the University of Maryland, College Park or governmental authorities if you or someone else is in danger or if we are required to do so by US law.
+        </p>
+        <p>
+          In accordance with legal requirements and/or professional standards, we will disclose to the appropriate individuals and/or authorities information that comes to our attention concerning child abuse or neglect or potential harm to you or others.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>What are the risks of this research?</td>
+      <td>
+        <p>
+          There may be some risks from participating in this research study. Specifically, completion of the measures requires cognitive effort for a sustained period of time and may generate frustration in some students.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>What are the benefits of this research?</td>
+      <td>
+        <p>
+          This research is not designed to help you personally, but the results may help the investigator learn more about how context and type of experience are related to epistemic orientations. We hope that, in the future, other people might benefit from this study through improved understanding of students' perception of the relation between knowledge, interest, and strategies.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Do I have to be in this research? May I stop participating at any time?</td>
+      <td>
+        <p>
+          Your participation in this research is completely voluntary. You may choose not to take part at all. If you decide to participate in this research, you may stop participating at any time. If you decide not to participate in this study or if you stop participating at any time, you will not be penalized or lose any benefits to which you otherwise qualify.
+        </p>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>What if I have questions?</td>
+      <td>
+        <p>
+          This research is being conducted by Dr. Patricia Alexander and the Human Development department at the University of Maryland, College Park. If you have any questions about the research study itself, please contact Dr. Alexander at: Disciplined Reading and Learning Research Lab, Room 3240 Benjamin Building, Department of Human Development, University of Maryland, College Park, MD 20742, USA), by telephone at (301) 405-6956, or by email at <%= link_to "palexand@umd.edu", "mailto:palexand@umd.edu?subject=[DRLRL Study] IRB Inquiry" %>. If you have questions about your rights as a research subject or wish to report a research-related injury, please contact: Institutional Review Board Office, University of Maryland, College Park, Maryland, 20742, USA; (e-mail) <%= link_to "irb@deans.umd.edu", "mailto:irb@deans.umd.edu?subject=[DRLRL Study] IRB Inquiry" %>; (telephone) 301-405-0678
+        </p>
+        <p>
+          This research has been reviewed according to the University of Maryland, College Park IRB procedures for research involving human subjects.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>Statement of Age of Subject and Consent</td>
+      <td>
+        <p>
+          Please enter your name below to provide your consent. Your consent indicates that:
+          you are at least 18 years of age;
+          the research has been explained to you;
+          your questions have been fully answered; and
+          you freely and voluntarily choose to participate in this research
+          project.
+        </p>
+      </td>
+    </tr>    
+  </tbody>
+</table>
+
+<%= render 'form' %>
