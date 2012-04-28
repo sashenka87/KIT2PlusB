@@ -28,4 +28,5 @@ class Participant < ActiveRecord::Base
   
   has_one :demographic, :class_name => "Demographic", :foreign_key => "participant_id"
   has_one :graphic, :class_name => "Graphic", :foreign_key => "participant_id"
+  has_one :search, :class_name => "Search", :foreign_key => "participant_id"
 end

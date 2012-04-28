@@ -66,6 +66,9 @@ describe SearchesController do
   end
 
   describe "GET index" do
+    before(:each) do
+      auth_admin
+    end
     it "assigns all searches as @searches" do
       search = FactoryGirl.create(:search, :participant_id => @participant.id)
       get :index, {}, valid_session
@@ -74,6 +77,9 @@ describe SearchesController do
   end
 
   describe "GET show" do
+    before(:each) do
+      auth_admin
+    end
     it "assigns the requested search as @search" do
       search = FactoryGirl.create(:search, :participant_id => @participant.id)
       get :show, {:id => search.to_param}, valid_session
@@ -85,6 +91,13 @@ describe SearchesController do
     it "assigns a new search as @search" do
       get :new, {}, valid_session
       assigns(:search).should be_a_new(Search)
+    end
+    
+    it "should redirect to the new_demographic page" do
+      @demographic.destroy
+      @graphic.destroy
+      get :new, {}, valid_session
+      response.should redirect_to(new_demographic_path)
     end
   end
 
@@ -104,7 +117,12 @@ describe SearchesController do
 
       it "redirects to the created search" do
         post :create, {:search => step0_attributes}, valid_session
-        response.should redirect_to(Search.last)
+        response.should redirect_to(new_search_path)
+      end
+      
+      it "should have step = 1" do
+        post :create, {:search => step0_attributes}, valid_session
+        assigns(:search).step.should == 1
       end
     end
 
@@ -120,7 +138,7 @@ describe SearchesController do
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
         post :create, {:search => {}}, valid_session
-        response.should render_template("new")
+        response.should render_template("searches/steps/step0")
       end
     end
   end
@@ -146,7 +164,14 @@ describe SearchesController do
       it "redirects to the search" do
         search = FactoryGirl.create(:search, :participant_id => @participant.id)
         put :update, {:id => search.to_param, :search => step1_attributes}, valid_session
-        response.should redirect_to(search)
+        response.should redirect_to(new_search_path)
+      end
+      
+      it "should increase the step number by one" do
+        search = FactoryGirl.create(:search, :participant_id => @participant.id, :step => 2)
+        put :update, {:id => search.to_param, :search => step1_attributes}, valid_session
+        search.reload
+        search.step.should == 3
       end
     end
 
@@ -160,16 +185,19 @@ describe SearchesController do
       end
 
       it "redirects to the new_search_path" do
-        search = FactoryGirl.create(:search, :participant_id => @participant.id)
+        search = FactoryGirl.create(:search, :participant_id => @participant.id, :step => 3)
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
         put :update, {:id => search.to_param, :search => {}}, valid_session
-        response.should redirect_to(new_search_path)
+        response.should render_template("searches/steps/step3")
       end
     end
   end
 
   describe "DELETE destroy" do
+    before(:each) do
+      auth_admin
+    end
     it "destroys the requested search" do
       search = FactoryGirl.create(:search, :participant_id => @participant.id)
       expect {
