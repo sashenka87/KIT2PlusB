@@ -1,0 +1,41 @@
+<h1>Graphics Task</h1>
+<br>
+<p class="instructions">In the spaces below, please provide a definition for the following terms:</p>
+<br>
+<%= form_for @graphic, :html => { :class => 'form-vertical' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  
+  <div class="control-group">
+    <%= f.label :k_def, "Knowledge:", :class => 'control-label instructions' %>
+    <div class="controls">
+      <%= f.text_area :k_def, :class => "span6", :rows => 3, :placeholder => "Definition of Knowledge" %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :i_def, "Information:", :class => 'control-label instructions' %>
+    <div class="controls">
+      <%= f.text_area :i_def, :class => "span6", :rows => 3, :placeholder => "Definition of Information" %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :t_def, "Truth:", :class => 'control-label instructions' %>
+    <div class="controls">
+      <%= f.text_area :t_def, :class => "span6", :rows => 3, :placeholder => "Definition of Truth" %>
+    </div>
+  </div>
+
+  <hr/>
+
+  <p class="instructions">
+    Now that you have completed the graphics task and defined knowledge, information and truth, please explain your understanding of the relation between <strong>knowledge</strong>, <strong>information</strong>, and <strong>truth</strong>.
+  </p>
+  <div class="control-group">
+    <%= f.text_area :kit, :class => "span8", :rows => 7, :placeholder => "Interrelation between Knowledge, Information, and Truth" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

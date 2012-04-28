@@ -1,0 +1,80 @@
+<%= form_for @demographic, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+
+  <div class="row">
+    <div class="span5">
+      <div class="control-group">
+        <%= f.label :gender, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.select :gender, [["Male", 0], ["Female", 1], ["Other", 2]], :include_blank => true %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :age, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.number_field :age, :class => 'number_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :ethnicity, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :ethnicity, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :major, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :major, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :year_university, "Year in Unversity", :class => 'control-label' %>
+        <div class="controls">
+          <%= f.select :year_university, [["1 / Freshman", 1], ["2 / Sophomore", 2], ["3 / Junior", 3], ["4 / Senior", 4], ["4+", 5], ["Masters / Postgraduate", 6]], :include_blank => true %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :gpa, "GPA", :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :gpa %>
+        </div>
+      </div>
+    </div>
+    <div class="span5">
+      <div class="control-group">
+        <%= f.label :country_of_residence, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :country_of_residence, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :country_of_birth, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :country_of_birth, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :country_of_schooling, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :country_of_schooling, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <%= f.check_box :native_english, :class => 'check_box inline' %> &nbsp
+          <%= f.label :native_english, "I am a native Enlgish speaker", :class => 'inline' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :native_language, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :native_language, :class => 'text_field' %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

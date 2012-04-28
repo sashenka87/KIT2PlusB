@@ -1,0 +1,21 @@
+<h1>Graphics Task</h1>
+<br>
+<p class="instructions">Please explain why the graphic representation you chose best represents your view of the relation between <strong>knowledge</strong> and <strong>information</strong>.</p>
+<br>
+<div class="row">
+  <div class="span4">
+    <%= image_tag "kit_graphics/KI/#{@graphic.graphics_ki}.jpg", :class => "span4" %>
+  </div>
+</div>
+<br><br>
+
+<%= form_for @graphic, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  
+  <div class="control-group">
+    <%= f.text_area :graphics_ki_text, :class => 'span5', :rows => 10, :placeholder => "Please justify your selection." %>
+  </div>
+  <p>
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+  </p>
+<% end %>

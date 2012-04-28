@@ -20,7 +20,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">DRLRL Research Study</a>
+        <a class="brand" href="/">DRLRL Research Study</a>
         <div class="nav-collapse">
           <%= render 'layouts/progress_bar', :progress => 60 %>
         </div>
@@ -29,6 +29,8 @@
   </div>
 
   <div class="container">
+    <%= render 'shared/flash_messages', :flash => flash %>
+    
     <%= yield %>
   </div>
 

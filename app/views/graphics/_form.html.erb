@@ -1,0 +1,74 @@
+<%= form_for @graphic, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+
+  <div class="control-group">
+    <%= f.label :graphics_ki, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :graphics_ki, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :graphics_ki_text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :graphics_ki_text, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :graphics_kt, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :graphics_kt, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :graphics_it, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :graphics_it, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :graphics_it_text, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :graphics_it_text, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :k_def, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :k_def, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :i_def, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :i_def, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :t_def, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :t_def, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :kit, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :kit, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :context, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :context, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :domain, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :domain, :class => 'text_area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+  </div>
+<% end %>
