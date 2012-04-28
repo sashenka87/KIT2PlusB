@@ -1,11 +1,76 @@
-<h1>Search Task</h1>
+<h1>Search Task <small>Background Knowledge</small></h1>
 <br>
 
-<%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= render "shared/error_messages", :object => f.object %>
-  <br>
-  <%= render "searches/tasks/task0", :f => f %>
-  <p>
-    <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-  </p>
+<% if @search.ad_test == 0 %>
+
+  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= render "shared/error_messages", :object => f.object %>
+    <%= render "searches/tasks/task0", :f => f %>
+    <br>
+    <%= render "searches/tasks/task5", :f => f %>
+    <br>
+    <%= render "searches/tasks/task1", :f => f %>
+    <br>
+    <%= render "searches/tasks/task3", :f => f %>
+    <p>
+      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+    </p>
+  <% end %>
+
+<% end %>
+
+
+<% if @search.ad_test == 1 %>
+
+  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= render "shared/error_messages", :object => f.object %>
+    <%= render "searches/tasks/task1", :f => f %>
+    <br>
+    <%= render "searches/tasks/task3", :f => f %>
+    <br>
+    <%= render "searches/tasks/task0", :f => f %>
+    <br>
+    <%= render "searches/tasks/task5", :f => f %>
+    <p>
+      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+    </p>
+  <% end %>
+
+<% end %>
+
+<% if @search.ad_test == 2 %>
+
+  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= render "shared/error_messages", :object => f.object %>
+    <%= render "searches/tasks/task0", :f => f %>
+    <br>
+    <%= render "searches/tasks/task2", :f => f %>
+    <br>
+    <%= render "searches/tasks/task1", :f => f %>
+    <br>
+    <%= render "searches/tasks/task4", :f => f %>
+    <p>
+      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+    </p>
+  <% end %>
+  
+<% end %>
+
+
+<% if @search.ad_test == 3 %>
+
+  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+    <%= render "shared/error_messages", :object => f.object %>
+    <%= render "searches/tasks/task1", :f => f %>
+    <br>
+    <%= render "searches/tasks/task4", :f => f %>
+    <br>
+    <%= render "searches/tasks/task0", :f => f %>
+    <br>
+    <%= render "searches/tasks/task2", :f => f %>
+    <p>
+      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
+    </p>
+  <% end %>
+  
 <% end %>
