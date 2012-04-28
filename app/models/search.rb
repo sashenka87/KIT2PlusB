@@ -45,4 +45,9 @@ class Search < ActiveRecord::Base
   validates_presence_of :t_know_astro, :if => Proc.new{ |f| f.step > 0 }
   validates_presence_of :d_know_psyc,  :if => Proc.new{ |f| f.step > 0 }
   validates_presence_of :t_know_psyc,  :if => Proc.new{ |f| f.step > 0 }
+  
+  validates_presence_of :d_interest_astro, :if => Proc.new{ |f| f.step > 1 }
+  validates_presence_of :t_interest_astro, :if => Proc.new{ |f| f.step > 1 }
+  validates_presence_of :d_interest_psyc,  :if => Proc.new{ |f| f.step > 1 }
+  validates_presence_of :t_interest_psyc,  :if => Proc.new{ |f| f.step > 1 }
 end
