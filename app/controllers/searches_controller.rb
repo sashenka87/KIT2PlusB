@@ -27,7 +27,7 @@ class SearchesController < ApplicationController
   # GET /searches/new
   # GET /searches/new.json
   def new
-    @search = current_search || Search.new
+    @search = current_search || @participant.create_search
 
     if @search.step > 5
       redirect_to goodbye_path

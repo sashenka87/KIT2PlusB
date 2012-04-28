@@ -90,7 +90,7 @@ describe SearchesController do
   describe "GET new" do
     it "assigns a new search as @search" do
       get :new, {}, valid_session
-      assigns(:search).should be_a_new(Search)
+      assigns(:search).should_not be_a_new(Search)
     end
     
     it "should redirect to the new_demographic page" do
