@@ -32,11 +32,6 @@ class SearchesController < ApplicationController
     end
   end
 
-  # GET /searches/1/edit
-  def edit
-    @search = Search.find(params[:id])
-  end
-
   # POST /searches
   # POST /searches.json
   def create
@@ -63,7 +58,7 @@ class SearchesController < ApplicationController
         format.html { redirect_to @search, notice: 'Search was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { redirect_to new_search_path }
         format.json { render json: @search.errors, status: :unprocessable_entity }
       end
     end

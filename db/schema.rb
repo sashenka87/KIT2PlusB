@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120428034633) do
+ActiveRecord::Schema.define(:version => 20120428040203) do
 
   create_table "demographics", :force => true do |t|
     t.integer  "participant_id"
@@ -77,8 +77,9 @@ ActiveRecord::Schema.define(:version => 20120428034633) do
     t.text     "answer_open"
     t.text     "confidencewhy_discrete"
     t.text     "confidencewhy_open"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
+    t.integer  "step",                   :default => 0
   end
 
 end

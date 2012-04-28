@@ -19,6 +19,7 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 describe SearchesController do
+  render_views
 
   # This should return the minimal set of attributes required to create a valid
   # Search. As you add validations to Search, be sure to
@@ -54,14 +55,6 @@ describe SearchesController do
     it "assigns a new search as @search" do
       get :new, {}, valid_session
       assigns(:search).should be_a_new(Search)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested search as @search" do
-      search = Search.create! valid_attributes
-      get :edit, {:id => search.to_param}, valid_session
-      assigns(:search).should eq(search)
     end
   end
 
@@ -136,12 +129,12 @@ describe SearchesController do
         assigns(:search).should eq(search)
       end
 
-      it "re-renders the 'edit' template" do
+      it "redirects to the new_search_path" do
         search = Search.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Search.any_instance.stub(:save).and_return(false)
         put :update, {:id => search.to_param, :search => {}}, valid_session
-        response.should render_template("edit")
+        response.should redirect_to(new_search_path)
       end
     end
   end

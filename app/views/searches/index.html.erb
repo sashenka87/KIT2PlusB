@@ -44,8 +44,6 @@
         <td><%= search.confidencewhy_open %></td>
         <td><%=l search.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_search_path(search), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       search_path(search),
                       :method => :delete,

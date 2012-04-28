@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20120428034633
+# Schema version: 20120428040203
 #
 # Table name: searches
 #
@@ -21,6 +21,7 @@
 #  confidencewhy_open     :text
 #  created_at             :datetime        not null
 #  updated_at             :datetime        not null
+#  step                   :integer         default(0)
 #
 
 require 'spec_helper'
