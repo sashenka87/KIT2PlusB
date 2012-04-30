@@ -57,7 +57,7 @@ class Search < ActiveRecord::Base
   validates_presence_of :confidence_discrete, :if => Proc.new{ |f| f.step > 3 }
   validates_presence_of :confidencewhy_discrete, :if => Proc.new{ |f| f.step > 3 }
   
-  has_many :source_evaluations, :class_name => "SourceEvaluation", :foreign_key => "search_id"
+  has_many :source_evaluations, :class_name => "SourceEvaluation", :foreign_key => "search_id", :dependent => :destroy
   accepts_nested_attributes_for :source_evaluations, :reject_if => :all_blank
   attr_accessible :source_evaluations_attributes
 end
