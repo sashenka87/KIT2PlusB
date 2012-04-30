@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120428045515) do
+ActiveRecord::Schema.define(:version => 20120430031847) do
 
   create_table "demographics", :force => true do |t|
     t.integer  "participant_id"
@@ -81,6 +81,16 @@ ActiveRecord::Schema.define(:version => 20120428045515) do
     t.datetime "updated_at",                            :null => false
     t.integer  "step",                   :default => 0
     t.integer  "ad_test"
+  end
+
+  create_table "source_evaluations", :force => true do |t|
+    t.integer  "search_id"
+    t.integer  "familiarity"
+    t.integer  "utility"
+    t.integer  "accessibility"
+    t.integer  "trust"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
 end
