@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20120430031847
+# Schema version: 20120430054748
 #
 # Table name: source_evaluations
 #
@@ -11,10 +11,11 @@
 #  trust         :integer
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
+#  source_id     :integer
 #
 
 class SourceEvaluation < ActiveRecord::Base
-  attr_accessible :accessibility, :familiarity, :trust, :utility
+  attr_accessible :accessibility, :familiarity, :trust, :utility, :source_id
   
   belongs_to :search, :class_name => "Search", :foreign_key => "search_id"
   
@@ -23,4 +24,5 @@ class SourceEvaluation < ActiveRecord::Base
   validates_presence_of :utility
   validates_presence_of :accessibility
   validates_presence_of :trust
+  validates_presence_of :source_id
 end

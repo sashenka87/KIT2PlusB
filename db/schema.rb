@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430031847) do
+ActiveRecord::Schema.define(:version => 20120430054748) do
 
   create_table "demographics", :force => true do |t|
     t.integer  "participant_id"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20120430031847) do
     t.integer  "trust"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.integer  "source_id"
   end
 
 end

@@ -57,7 +57,7 @@ describe Search do
       @participant = FactoryGirl.create(:participant)
     end
     it "should create a source evaluation" do
-      s_attrs = { :familiarity => 12, :utility => 34, :accessibility => 67, :trust => 87 }
+      s_attrs = { :familiarity => 12, :utility => 34, :accessibility => 67, :trust => 87, :source_id => 1 }
       attrs = step0_attributes.merge(step1_attributes).merge(step2_attributes).merge({ :source_evaluations_attributes => [s_attrs] })
       s = @participant.build_search(attrs)
       s.save
@@ -67,17 +67,17 @@ describe Search do
     end
     
     it "should not create a source evaluation" do
-      s_attrs = { :familiarity => "", :utility => "", :accessibility => "", :trust => "" }
+      s_attrs = { :familiarity => "", :utility => "", :accessibility => "", :trust => "", :source_id => 1 }
       attrs = step0_attributes.merge(step1_attributes).merge(step2_attributes).merge({ :source_evaluations_attributes => [s_attrs] })
       s = @participant.build_search(attrs)
       s.save
       s.source_evaluations.count.should == 0
-      Search.count.should == 1
+      Search.count.should == 0
       SourceEvaluation.count.should == 0
     end
     
     it "should not create a search" do
-      s_attrs = { :familiarity => "", :utility => "1", :accessibility => "", :trust => "" }
+      s_attrs = { :familiarity => "", :utility => "1", :accessibility => "", :trust => "", :source_id => 1 }
       attrs = step0_attributes.merge(step1_attributes).merge(step2_attributes).merge({ :source_evaluations_attributes => [s_attrs] })
       s = @participant.build_search(attrs)
       s.save
