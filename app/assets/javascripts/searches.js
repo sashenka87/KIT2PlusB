@@ -1,5 +1,7 @@
 var total_sources_used = 0;
 var current_source = -1;
+var next_source = -1
+var submit_button_pressed = false;
 
 function create_nested_attributes(source_id, familiarity, utility, accessibility, trust){
 	var nested_attributes = '<input name="search[source_evaluations_attributes][' + total_sources_used + '][source_id]"     type="hidden" value="' + source_id + '">';	
@@ -11,9 +13,16 @@ function create_nested_attributes(source_id, familiarity, utility, accessibility
 	total_sources_used += 1;
 };
 
-function bring_up_modal(source_id){
+function bring_up_modal(){
 	$("#modalPopUp").modal({ backdrop: 'static', keyboard: false });
-	current_source = source_id;
+};
+
+function set_current_source(source_id){
+	$(".source_page").bind('click', function(){
+		bring_up_modal();
+	});
+	current_source = next_source;
+	next_source = source_id;
 };
 
 function finish_modal(){
@@ -27,8 +36,24 @@ function finish_modal(){
 		$(".selected_x").html(".");
 		$(".selected_x").removeClass("selected_x");
 		$("#modalPopUp").modal('hide');
+		if (submit_button_pressed) {
+			$($("form")[0]).submit();
+		}
 	}
 	else{
 		alert("Please make sure you've answered all of the questions.")
 	}
 };
+
+$(function(){
+	$(".source_submit").click(function(){
+		current_source = next_source;
+		if (next_source != -1) {
+			bring_up_modal();
+			submit_button_pressed = true;
+			return false;
+		}else{
+			return true;
+		}
+	});
+});
