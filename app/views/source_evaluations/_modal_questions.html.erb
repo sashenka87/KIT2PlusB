@@ -1,0 +1,18 @@
+<div class="modal fade" id="modalPopUp">
+  <div class="modal-header">
+      <h3>Source Evaluation</h3>
+    </div>
+    <div class="modal-body">
+      <p class="instructions">How <strong>useful</strong> did you find this source?</p>
+      <%= render "shared/mm_line", :num => 50 %>
+      <p class="instructions">How <strong>accessible</strong> did you find this source?</p>
+      <%= render "shared/mm_line", :num => 50 %>
+      <p class="instructions">How <strong>trustworthy</strong> did you find this source?</p>
+      <%= render "shared/mm_line", :num => 50 %>
+      <p class="instructions">How <strong>familiar</strong> did you find this source?</p>
+      <%= render "shared/mm_line", :num => 50 %>
+    </div>
+    <div class="modal-footer">
+      <%= link_to_function "Finish source evaluation", "finish_modal()" %>
+    </div>
+</div>
