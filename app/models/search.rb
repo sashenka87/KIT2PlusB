@@ -31,7 +31,7 @@ class Search < ActiveRecord::Base
   attr_accessible :answer_discrete, :answer_open, :confidence_discrete, :confidence_open, :confidencewhy_discrete
   attr_accessible :confidencewhy_open, :d_interest_astro, :d_interest_psyc, :d_know_astro, :d_know_psyc
   attr_accessible :t_interest_astro, :t_interest_psyc, :t_know_astro, :t_know_psyc
-      
+        
   belongs_to :participant, :class_name => "Participant", :foreign_key => "participant_id"
   
   before_validation(:on => :create) do
@@ -57,5 +57,7 @@ class Search < ActiveRecord::Base
   validates_presence_of :confidence_discrete, :if => Proc.new{ |f| f.step > 3 }
   validates_presence_of :confidencewhy_discrete, :if => Proc.new{ |f| f.step > 3 }
   
-  has_many :search_evaluations, :class_name => "SourceEvaluation", :foreign_key => "search_id"
+  has_many :source_evaluations, :class_name => "SourceEvaluation", :foreign_key => "search_id"
+  accepts_nested_attributes_for :source_evaluations, :reject_if => :all_blank
+  attr_accessible :source_evaluations_attributes
 end

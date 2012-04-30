@@ -18,7 +18,7 @@ class SourceEvaluation < ActiveRecord::Base
   
   belongs_to :search, :class_name => "Search", :foreign_key => "search_id"
   
-  validates_presence_of :search_id
+  # validates_presence_of :search_id # set through accepts nested attributes
   validates_presence_of :familiarity
   validates_presence_of :utility
   validates_presence_of :accessibility
