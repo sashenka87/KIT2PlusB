@@ -3,48 +3,115 @@
 
 <% if @search.ad_test == 0 %>
 
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task9", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task9", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <h3>Source Library</h3>
+      <p> 
+        <%= link_to_function "Government Report", "set_current_source(1)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Journal Article", "set_current_source(2)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Newspaper", "set_current_source(3)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "News Site", "set_current_source(4)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Online Encyclopedia", "set_current_source(5)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Blog", "set_current_source(6)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Website", "set_current_source(7)", :class => "btn btn-info source_page" %>
+      </p>
+    </div>
+  </div>
 
 <% end %>
 
 <% if @search.ad_test == 1 %>
-
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task8", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task8", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <h3>Source Library</h3>
+      <p> 
+        <%= link_to_function "Government Report", "set_current_source(1)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Journal Article", "set_current_source(2)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Newspaper", "set_current_source(3)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "News Site", "set_current_source(4)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Online Encyclopedia", "set_current_source(5)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Blog", "set_current_source(6)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Website", "set_current_source(7)", :class => "btn btn-info source_page" %>
+      </p>
+    </div>
+  </div>
 
 <% end %>
 
 <% if @search.ad_test == 2 %>
 
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task6", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task6", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <h3>Source Library</h3>
+      <p> 
+        <%= link_to_function "Government Report", "set_current_source(1)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Journal Article", "set_current_source(2)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Newspaper", "set_current_source(3)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "News Site", "set_current_source(4)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Online Encyclopedia", "set_current_source(5)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Blog", "set_current_source(6)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Website", "set_current_source(7)", :class => "btn btn-info source_page" %>
+      </p>
+    </div>
+  </div>
   
 <% end %>
 
 <% if @search.ad_test == 3 %>
-
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task7", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task7", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <h3>Source Library</h3>
+      <p> 
+        <%= link_to_function "Government Report", "set_current_source(1)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Journal Article", "set_current_source(2)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Newspaper", "set_current_source(3)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "News Site", "set_current_source(4)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Online Encyclopedia", "set_current_source(5)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Blog", "set_current_source(6)", :class => "btn btn-info source_page" %>
+        <%= link_to_function "Website", "set_current_source(7)", :class => "btn btn-info source_page" %>
+      </p>
+    </div>
+  </div>
   
 <% end %>
+
+<!-- Needed for all of the branches -->
+<%= render 'source_evaluations/modal_questions' %>
