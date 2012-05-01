@@ -2,49 +2,80 @@
 <br>
 
 <% if @search.ad_test == 0 %>
-
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task8", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task8", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <%= render 'searches/steps/source_library', :folder => "Stars" %>
+    </div>
+  </div>
 
 <% end %>
 
 <% if @search.ad_test == 1 %>
 
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task9", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task9", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <%= render 'searches/steps/source_library', :folder => "Language" %>
+    </div>
+  </div>
 
 <% end %>
 
 <% if @search.ad_test == 2 %>
 
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task7", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task7", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <%= render 'searches/steps/source_library', :folder => "Planets" %>
+    </div>
+  </div>
   
 <% end %>
 
 <% if @search.ad_test == 3 %>
 
-  <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
-    <%= render "shared/error_messages", :object => f.object %>
-    <%= render "searches/tasks/task6", :f => f %>
-    <p>
-      <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-    </p>
-  <% end %>
+  <div class="row">
+    <div class="span4">
+      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+        <%= render "shared/error_messages", :object => f.object %>
+        <%= render "searches/tasks/task6", :f => f %>
+        <p>
+          <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
+        </p>
+      <% end %>
+    </div>
+    <div class="span8">
+      <%= render 'searches/steps/source_library', :folder => "Vocab" %>
+    </div>
+  </div>
   
 <% end %>
+
+<!-- Needed for all of the branches -->
+<%= render 'source_evaluations/modal_questions' %>
