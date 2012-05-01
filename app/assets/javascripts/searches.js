@@ -23,6 +23,8 @@ function set_current_source(source_id){
 	});
 	current_source = next_source;
 	next_source = source_id;
+	$(".sources .source").addClass("hidden");
+	$(".sources #source" + source_id).removeClass("hidden");
 };
 
 function finish_modal(){
