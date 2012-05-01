@@ -24,7 +24,7 @@ class Demographic < ActiveRecord::Base
   attr_accessible :age, :country_of_birth, :country_of_residence, :country_of_schooling, :ethnicity, :gender
   attr_accessible :gpa, :major, :native_english, :native_language, :year_university
   
-  validates_presence_of :participant_id
+  # validates_presence_of :participant_id
   validates_presence_of :gender
   validates_presence_of :age
   validates_presence_of :major

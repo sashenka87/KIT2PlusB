@@ -28,7 +28,7 @@ class Graphic < ActiveRecord::Base
   
   belongs_to :participant, :class_name => "Participant", :foreign_key => "participant_id"
   
-  validates_presence_of :participant_id
+  # validates_presence_of :participant_id
   validates_presence_of :graphics_ki
   validates_presence_of :graphics_ki_text, :if => Proc.new{ |f| f.step > 1 }
   validates_presence_of :graphics_kt, :if => Proc.new{ |f| f.step > 2 }
