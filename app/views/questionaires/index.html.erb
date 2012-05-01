@@ -1,0 +1,200 @@
+<%- model_class = Questionaire.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:q0) %></th>
+      <th><%= model_class.human_attribute_name(:q1) %></th>
+      <th><%= model_class.human_attribute_name(:q2) %></th>
+      <th><%= model_class.human_attribute_name(:q3) %></th>
+      <th><%= model_class.human_attribute_name(:q4) %></th>
+      <th><%= model_class.human_attribute_name(:q5) %></th>
+      <th><%= model_class.human_attribute_name(:q6) %></th>
+      <th><%= model_class.human_attribute_name(:q7) %></th>
+      <th><%= model_class.human_attribute_name(:q8) %></th>
+      <th><%= model_class.human_attribute_name(:q9) %></th>
+      <th><%= model_class.human_attribute_name(:q10) %></th>
+      <th><%= model_class.human_attribute_name(:q11) %></th>
+      <th><%= model_class.human_attribute_name(:q12) %></th>
+      <th><%= model_class.human_attribute_name(:q13) %></th>
+      <th><%= model_class.human_attribute_name(:q14) %></th>
+      <th><%= model_class.human_attribute_name(:q15) %></th>
+      <th><%= model_class.human_attribute_name(:q16) %></th>
+      <th><%= model_class.human_attribute_name(:q17) %></th>
+      <th><%= model_class.human_attribute_name(:q18) %></th>
+      <th><%= model_class.human_attribute_name(:q19) %></th>
+      <th><%= model_class.human_attribute_name(:q20) %></th>
+      <th><%= model_class.human_attribute_name(:q21) %></th>
+      <th><%= model_class.human_attribute_name(:q22) %></th>
+      <th><%= model_class.human_attribute_name(:q23) %></th>
+      <th><%= model_class.human_attribute_name(:q24) %></th>
+      <th><%= model_class.human_attribute_name(:q25) %></th>
+      <th><%= model_class.human_attribute_name(:q26) %></th>
+      <th><%= model_class.human_attribute_name(:q27) %></th>
+      <th><%= model_class.human_attribute_name(:q28) %></th>
+      <th><%= model_class.human_attribute_name(:q29) %></th>
+      <th><%= model_class.human_attribute_name(:q30) %></th>
+      <th><%= model_class.human_attribute_name(:q31) %></th>
+      <th><%= model_class.human_attribute_name(:q32) %></th>
+      <th><%= model_class.human_attribute_name(:q33) %></th>
+      <th><%= model_class.human_attribute_name(:q34) %></th>
+      <th><%= model_class.human_attribute_name(:q35) %></th>
+      <th><%= model_class.human_attribute_name(:q36) %></th>
+      <th><%= model_class.human_attribute_name(:q37) %></th>
+      <th><%= model_class.human_attribute_name(:q38) %></th>
+      <th><%= model_class.human_attribute_name(:q39) %></th>
+      <th><%= model_class.human_attribute_name(:q40) %></th>
+      <th><%= model_class.human_attribute_name(:q41) %></th>
+      <th><%= model_class.human_attribute_name(:q42) %></th>
+      <th><%= model_class.human_attribute_name(:q43) %></th>
+      <th><%= model_class.human_attribute_name(:q44) %></th>
+      <th><%= model_class.human_attribute_name(:q45) %></th>
+      <th><%= model_class.human_attribute_name(:q46) %></th>
+      <th><%= model_class.human_attribute_name(:q47) %></th>
+      <th><%= model_class.human_attribute_name(:q48) %></th>
+      <th><%= model_class.human_attribute_name(:q49) %></th>
+      <th><%= model_class.human_attribute_name(:q50) %></th>
+      <th><%= model_class.human_attribute_name(:q51) %></th>
+      <th><%= model_class.human_attribute_name(:q52) %></th>
+      <th><%= model_class.human_attribute_name(:q53) %></th>
+      <th><%= model_class.human_attribute_name(:q54) %></th>
+      <th><%= model_class.human_attribute_name(:q55) %></th>
+      <th><%= model_class.human_attribute_name(:q56) %></th>
+      <th><%= model_class.human_attribute_name(:q57) %></th>
+      <th><%= model_class.human_attribute_name(:q58) %></th>
+      <th><%= model_class.human_attribute_name(:q59) %></th>
+      <th><%= model_class.human_attribute_name(:q60) %></th>
+      <th><%= model_class.human_attribute_name(:q61) %></th>
+      <th><%= model_class.human_attribute_name(:q62) %></th>
+      <th><%= model_class.human_attribute_name(:q63) %></th>
+      <th><%= model_class.human_attribute_name(:q64) %></th>
+      <th><%= model_class.human_attribute_name(:q65) %></th>
+      <th><%= model_class.human_attribute_name(:q66) %></th>
+      <th><%= model_class.human_attribute_name(:q67) %></th>
+      <th><%= model_class.human_attribute_name(:q68) %></th>
+      <th><%= model_class.human_attribute_name(:q69) %></th>
+      <th><%= model_class.human_attribute_name(:q70) %></th>
+      <th><%= model_class.human_attribute_name(:q71) %></th>
+      <th><%= model_class.human_attribute_name(:q72) %></th>
+      <th><%= model_class.human_attribute_name(:q73) %></th>
+      <th><%= model_class.human_attribute_name(:q74) %></th>
+      <th><%= model_class.human_attribute_name(:q75) %></th>
+      <th><%= model_class.human_attribute_name(:q76) %></th>
+      <th><%= model_class.human_attribute_name(:q77) %></th>
+      <th><%= model_class.human_attribute_name(:q78) %></th>
+      <th><%= model_class.human_attribute_name(:q79) %></th>
+      <th><%= model_class.human_attribute_name(:q80) %></th>
+      <th><%= model_class.human_attribute_name(:q81) %></th>
+      <th><%= model_class.human_attribute_name(:context1) %></th>
+      <th><%= model_class.human_attribute_name(:context2) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @questionaires.each do |questionaire| %>
+      <tr>
+        <td><%= link_to questionaire.id, questionaire_path(questionaire) %></td>
+        <td><%= questionaire.q0 %></td>
+        <td><%= questionaire.q1 %></td>
+        <td><%= questionaire.q2 %></td>
+        <td><%= questionaire.q3 %></td>
+        <td><%= questionaire.q4 %></td>
+        <td><%= questionaire.q5 %></td>
+        <td><%= questionaire.q6 %></td>
+        <td><%= questionaire.q7 %></td>
+        <td><%= questionaire.q8 %></td>
+        <td><%= questionaire.q9 %></td>
+        <td><%= questionaire.q10 %></td>
+        <td><%= questionaire.q11 %></td>
+        <td><%= questionaire.q12 %></td>
+        <td><%= questionaire.q13 %></td>
+        <td><%= questionaire.q14 %></td>
+        <td><%= questionaire.q15 %></td>
+        <td><%= questionaire.q16 %></td>
+        <td><%= questionaire.q17 %></td>
+        <td><%= questionaire.q18 %></td>
+        <td><%= questionaire.q19 %></td>
+        <td><%= questionaire.q20 %></td>
+        <td><%= questionaire.q21 %></td>
+        <td><%= questionaire.q22 %></td>
+        <td><%= questionaire.q23 %></td>
+        <td><%= questionaire.q24 %></td>
+        <td><%= questionaire.q25 %></td>
+        <td><%= questionaire.q26 %></td>
+        <td><%= questionaire.q27 %></td>
+        <td><%= questionaire.q28 %></td>
+        <td><%= questionaire.q29 %></td>
+        <td><%= questionaire.q30 %></td>
+        <td><%= questionaire.q31 %></td>
+        <td><%= questionaire.q32 %></td>
+        <td><%= questionaire.q33 %></td>
+        <td><%= questionaire.q34 %></td>
+        <td><%= questionaire.q35 %></td>
+        <td><%= questionaire.q36 %></td>
+        <td><%= questionaire.q37 %></td>
+        <td><%= questionaire.q38 %></td>
+        <td><%= questionaire.q39 %></td>
+        <td><%= questionaire.q40 %></td>
+        <td><%= questionaire.q41 %></td>
+        <td><%= questionaire.q42 %></td>
+        <td><%= questionaire.q43 %></td>
+        <td><%= questionaire.q44 %></td>
+        <td><%= questionaire.q45 %></td>
+        <td><%= questionaire.q46 %></td>
+        <td><%= questionaire.q47 %></td>
+        <td><%= questionaire.q48 %></td>
+        <td><%= questionaire.q49 %></td>
+        <td><%= questionaire.q50 %></td>
+        <td><%= questionaire.q51 %></td>
+        <td><%= questionaire.q52 %></td>
+        <td><%= questionaire.q53 %></td>
+        <td><%= questionaire.q54 %></td>
+        <td><%= questionaire.q55 %></td>
+        <td><%= questionaire.q56 %></td>
+        <td><%= questionaire.q57 %></td>
+        <td><%= questionaire.q58 %></td>
+        <td><%= questionaire.q59 %></td>
+        <td><%= questionaire.q60 %></td>
+        <td><%= questionaire.q61 %></td>
+        <td><%= questionaire.q62 %></td>
+        <td><%= questionaire.q63 %></td>
+        <td><%= questionaire.q64 %></td>
+        <td><%= questionaire.q65 %></td>
+        <td><%= questionaire.q66 %></td>
+        <td><%= questionaire.q67 %></td>
+        <td><%= questionaire.q68 %></td>
+        <td><%= questionaire.q69 %></td>
+        <td><%= questionaire.q70 %></td>
+        <td><%= questionaire.q71 %></td>
+        <td><%= questionaire.q72 %></td>
+        <td><%= questionaire.q73 %></td>
+        <td><%= questionaire.q74 %></td>
+        <td><%= questionaire.q75 %></td>
+        <td><%= questionaire.q76 %></td>
+        <td><%= questionaire.q77 %></td>
+        <td><%= questionaire.q78 %></td>
+        <td><%= questionaire.q79 %></td>
+        <td><%= questionaire.q80 %></td>
+        <td><%= questionaire.q81 %></td>
+        <td><%= questionaire.context1 %></td>
+        <td><%= questionaire.context2 %></td>
+        <td><%=l questionaire.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_questionaire_path(questionaire), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      questionaire_path(questionaire),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_questionaire_path,
+            :class => 'btn btn-primary' %>
