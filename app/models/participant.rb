@@ -26,10 +26,10 @@ class Participant < ActiveRecord::Base
   validates_presence_of :last_name
   validates_presence_of :instructor
   
-  has_one :demographic, :class_name => "Demographic", :foreign_key => "participant_id"
-  has_one :graphic, :class_name => "Graphic", :foreign_key => "participant_id"
-  has_one :search, :class_name => "Search", :foreign_key => "participant_id"
-  has_one :questionaire, :class_name => "Questionaire", :foreign_key => "participant_id"
+  has_one :demographic, :class_name => "Demographic", :foreign_key => "participant_id", :dependent => :destroy
+  has_one :graphic, :class_name => "Graphic", :foreign_key => "participant_id", :dependent => :destroy
+  has_one :search, :class_name => "Search", :foreign_key => "participant_id", :dependent => :destroy
+  has_one :questionaire, :class_name => "Questionaire", :foreign_key => "participant_id", :dependent => :destroy
   
   def ad_test
     return nil if search.nil?
