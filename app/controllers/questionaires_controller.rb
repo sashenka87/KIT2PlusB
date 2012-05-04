@@ -34,11 +34,6 @@ class QuestionairesController < ApplicationController
     end
   end
 
-  # GET /questionaires/1/edit
-  def edit
-    @questionaire = Questionaire.find(params[:id])
-  end
-
   # POST /questionaires
   # POST /questionaires.json
   def create
