@@ -30,7 +30,7 @@ class SearchesController < ApplicationController
     @search = current_search || @participant.create_search # so that I can accept nested attributes
 
     if @search.step > 5
-      redirect_to goodbye_path
+      redirect_to new_questionaire_path
       return
     end
 
