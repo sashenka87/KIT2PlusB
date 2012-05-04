@@ -86,6 +86,10 @@
 #  q79            :integer
 #  q80            :integer
 #  q81            :integer
+#  q82            :integer
+#  q83            :integer
+#  q84            :integer
+#  q85            :integer
 #  context1       :text
 #  context2       :text
 #  created_at     :datetime        not null
@@ -103,7 +107,7 @@ class Questionaire < ActiveRecord::Base
   attr_accessible :q5, :q50, :q51, :q52, :q53, :q54, :q55, :q56, :q57, :q58, :q59
   attr_accessible :q6, :q60, :q61, :q62, :q63, :q64, :q65, :q66, :q67, :q68, :q69
   attr_accessible :q7, :q70, :q71, :q72, :q73, :q74, :q75, :q76, :q77, :q78, :q79
-  attr_accessible :q8, :q80, :q81, :q9
+  attr_accessible :q8, :q80, :q81, :q82, :q83, :q84, :q85, :q9
   
   belongs_to :participant, :class_name => "Participant", :foreign_key => "participant_id"
   
@@ -190,5 +194,9 @@ class Questionaire < ActiveRecord::Base
   validates_presence_of :q79       ,:if => Proc.new{ |f| f.step > 0 }
   validates_presence_of :q80       ,:if => Proc.new{ |f| f.step > 0 }
   validates_presence_of :q81       ,:if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :q82       ,:if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :q83       ,:if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :q84       ,:if => Proc.new{ |f| f.step > 0 }
+  validates_presence_of :q85       ,:if => Proc.new{ |f| f.step > 0 }
   validates_presence_of :context2  ,:if => Proc.new{ |f| f.step > 0 }
 end

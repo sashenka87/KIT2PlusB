@@ -144,6 +144,10 @@ ActiveRecord::Schema.define(:version => 20120501160642) do
     t.integer  "q79"
     t.integer  "q80"
     t.integer  "q81"
+    t.integer  "q82"
+    t.integer  "q83"
+    t.integer  "q84"
+    t.integer  "q85"
     t.text     "context1"
     t.text     "context2"
     t.datetime "created_at",                    :null => false

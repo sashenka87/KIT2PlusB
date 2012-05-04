@@ -86,6 +86,10 @@
 #  q79            :integer
 #  q80            :integer
 #  q81            :integer
+#  q82            :integer
+#  q83            :integer
+#  q84            :integer
+#  q85            :integer
 #  context1       :text
 #  context2       :text
 #  created_at     :datetime        not null
