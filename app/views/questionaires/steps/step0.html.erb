@@ -1,0 +1,7 @@
+<%= form_for @questionaire, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <% for i in 0..83 %>
+    <%= render "questionaires/question", :question => @question_texts[i % 42], :index => i, :f => f %>
+  <% end %>
+
+<% end %>

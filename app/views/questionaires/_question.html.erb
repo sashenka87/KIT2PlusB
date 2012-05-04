@@ -1,0 +1,8 @@
+<p class="instructions">
+  <%= question %>
+</p>
+
+<div class="question#{index}">
+  <%= render "shared/mm_line", :num => 100 %>
+  <%= f.hidden_field "q#{index}".to_sym, :class => "mmline_value" %>
+</div>

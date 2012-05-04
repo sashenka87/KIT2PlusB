@@ -1,4 +1,6 @@
 class QuestionairesController < ApplicationController
+  before_filter :load_questions
+  
   # GET /questionaires
   # GET /questionaires.json
   def index
@@ -27,7 +29,7 @@ class QuestionairesController < ApplicationController
     @questionaire = Questionaire.new
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html { render "questionaires/steps/step0" }
       format.json { render json: @questionaire }
     end
   end
@@ -79,5 +81,11 @@ class QuestionairesController < ApplicationController
       format.html { redirect_to questionaires_url }
       format.json { head :no_content }
     end
+  end
+  
+  private
+  
+  def load_questions
+    @question_texts = YAML.load_file("#{Rails.root.to_s}/lib/questionaire_questions.yml")
   end
 end
