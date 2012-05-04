@@ -4,4 +4,7 @@
     <%= render "questionaires/question", :question => @question_texts[i % 43], :index => i, :f => f %>
   <% end %>
 
+  <p>
+    <%= f.submit "Next Step", :class => 'btn btn-primary' %>
+  </p>
 <% end %>
