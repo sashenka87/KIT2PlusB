@@ -30,4 +30,9 @@ class Participant < ActiveRecord::Base
   has_one :graphic, :class_name => "Graphic", :foreign_key => "participant_id"
   has_one :search, :class_name => "Search", :foreign_key => "participant_id"
   has_one :questionaire, :class_name => "Questionaire", :foreign_key => "participant_id"
+  
+  def ad_test
+    return nil if search.nil?
+    return search.ad_test
+  end
 end
