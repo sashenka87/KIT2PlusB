@@ -1,5 +1,8 @@
-<%= form_for @questionaire, :html => { :class => 'form-horizontal' } do |f| %>
+<h2>Questionnaire Part 9</h2>
+<br>
 
+<%= form_for @questionaire, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
   <% for i in 50..56 %>
     <%= render "questionaires/question", :question => @question_texts[i % 43], :index => i, :f => f %>
   <% end %>

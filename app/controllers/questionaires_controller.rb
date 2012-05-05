@@ -36,7 +36,7 @@ class QuestionairesController < ApplicationController
       return
     end
     respond_to do |format|
-      format.html { render "questionaires/steps/step0" }
+      format.html { render "questionaires/steps/step#{@questionaire.step}" }
       format.json { render json: @questionaire }
     end
   end
