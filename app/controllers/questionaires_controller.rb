@@ -31,7 +31,7 @@ class QuestionairesController < ApplicationController
   def new
     @questionaire = current_questionaire || Questionaire.new
     
-    if @questionaire.step > 10
+    if @questionaire.step > 13
       redirect_to goodbye_path
       return
     end
