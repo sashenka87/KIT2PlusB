@@ -1,7 +1,7 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
-  factory :questionaire do
+  factory :questionnaire do
     q0 1
     q1 1
     q2 1

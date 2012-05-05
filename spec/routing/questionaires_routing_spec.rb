@@ -1,34 +1,34 @@
 require "spec_helper"
 
-describe QuestionairesController do
+describe QuestionnairesController do
   describe "routing" do
 
     it "routes to #index" do
-      get("/questionaires").should route_to("questionaires#index")
+      get("/questionnaires").should route_to("questionnaires#index")
     end
 
     it "routes to #new" do
-      get("/questionaires/new").should route_to("questionaires#new")
+      get("/questionnaires/new").should route_to("questionnaires#new")
     end
 
     it "routes to #show" do
-      get("/questionaires/1").should route_to("questionaires#show", :id => "1")
+      get("/questionnaires/1").should route_to("questionnaires#show", :id => "1")
     end
 
     # it "routes to #edit" do
-    #   get("/questionaires/1/edit").should route_to("questionaires#edit", :id => "1")
+    #   get("/questionnaires/1/edit").should route_to("questionnaires#edit", :id => "1")
     # end
 
     it "routes to #create" do
-      post("/questionaires").should route_to("questionaires#create")
+      post("/questionnaires").should route_to("questionnaires#create")
     end
 
     it "routes to #update" do
-      put("/questionaires/1").should route_to("questionaires#update", :id => "1")
+      put("/questionnaires/1").should route_to("questionnaires#update", :id => "1")
     end
 
     it "routes to #destroy" do
-      delete("/questionaires/1").should route_to("questionaires#destroy", :id => "1")
+      delete("/questionnaires/1").should route_to("questionnaires#destroy", :id => "1")
     end
 
   end

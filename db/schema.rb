@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20120501160642) do
     t.integer  "current_question", :default => 0
   end
 
-  create_table "questionaires", :force => true do |t|
+  create_table "questionnaires", :force => true do |t|
     t.integer  "q0"
     t.integer  "q1"
     t.integer  "q2"

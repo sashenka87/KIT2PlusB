@@ -18,11 +18,11 @@ require 'spec_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-describe QuestionairesController do
+describe QuestionnairesController do
   render_views
 
   # This should return the minimal set of attributes required to create a valid
-  # Questionaire. As you add validations to Questionaire, be sure to
+  # Questionnaire. As you add validations to Questionnaire, be sure to
   # update the return value of this method accordingly.
   def step0_attributes
     { :q0 => 2, :q1 => 14, :q2 => 25, :q3 => 23, :q4 => 55, :q5 => 12, :q6 => 21, :q7 => 98, :q8 => 21, :q9 => 10 }
@@ -62,7 +62,7 @@ describe QuestionairesController do
   
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # QuestionairesController. Be sure to keep this updated too.
+  # QuestionnairesController. Be sure to keep this updated too.
   def valid_session
     { :session_id => "woot" }
   end
@@ -82,10 +82,10 @@ describe QuestionairesController do
     before(:each) do
       auth_admin
     end
-    it "assigns all questionaires as @questionaires" do
-      questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
+    it "assigns all questionnaires as @questionnaires" do
+      questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
       get :index, {}, valid_session
-      assigns(:questionaires).should eq([questionaire])
+      assigns(:questionnaires).should eq([questionnaire])
     end
   end
 
@@ -93,17 +93,17 @@ describe QuestionairesController do
     before(:each) do
       auth_admin
     end
-    it "assigns the requested questionaire as @questionaire" do
-      questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
-      get :show, {:id => questionaire.to_param}, valid_session
-      assigns(:questionaire).should eq(questionaire)
+    it "assigns the requested questionnaire as @questionnaire" do
+      questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
+      get :show, {:id => questionnaire.to_param}, valid_session
+      assigns(:questionnaire).should eq(questionnaire)
     end
   end
 
   describe "GET new" do
-    it "assigns a new questionaire as @questionaire" do
+    it "assigns a new questionnaire as @questionnaire" do
       get :new, {}, valid_session
-      assigns(:questionaire).should be_a_new(Questionaire)
+      assigns(:questionnaire).should be_a_new(Questionnaire)
     end
 
     it "should redirect to the new_search page" do
@@ -114,90 +114,90 @@ describe QuestionairesController do
   end
 
   # describe "GET edit" do
-  #   it "assigns the requested questionaire as @questionaire" do
-  #     questionaire = Questionaire.create! valid_attributes
-  #     get :edit, {:id => questionaire.to_param}, valid_session
-  #     assigns(:questionaire).should eq(questionaire)
+  #   it "assigns the requested questionnaire as @questionnaire" do
+  #     questionnaire = Questionnaire.create! valid_attributes
+  #     get :edit, {:id => questionnaire.to_param}, valid_session
+  #     assigns(:questionnaire).should eq(questionnaire)
   #   end
   # end
 
   describe "POST create" do
     describe "with valid params" do
-      it "creates a new Questionaire" do
+      it "creates a new Questionnaire" do
         expect {
-          post :create, { :questionaire => step0_attributes }, valid_session
-        }.to change(Questionaire, :count).by(1)
+          post :create, { :questionnaire => step0_attributes }, valid_session
+        }.to change(Questionnaire, :count).by(1)
       end
 
-      it "assigns a newly created questionaire as @questionaire" do
-        post :create, {:questionaire => step0_attributes}, valid_session
-        assigns(:questionaire).should be_a(Questionaire)
-        assigns(:questionaire).should be_persisted
+      it "assigns a newly created questionnaire as @questionnaire" do
+        post :create, {:questionnaire => step0_attributes}, valid_session
+        assigns(:questionnaire).should be_a(Questionnaire)
+        assigns(:questionnaire).should be_persisted
       end
 
-      it "redirects to the created questionaire" do
-        post :create, {:questionaire => step0_attributes}, valid_session
-        response.should redirect_to(new_questionaire_path)
+      it "redirects to the created questionnaire" do
+        post :create, {:questionnaire => step0_attributes}, valid_session
+        response.should redirect_to(new_questionnaire_path)
       end
     end
 
     describe "with invalid params" do
-      it "assigns a newly created but unsaved questionaire as @questionaire" do
+      it "assigns a newly created but unsaved questionnaire as @questionnaire" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Questionaire.any_instance.stub(:save).and_return(false)
-        post :create, {:questionaire => {}}, valid_session
-        assigns(:questionaire).should be_a_new(Questionaire)
+        Questionnaire.any_instance.stub(:save).and_return(false)
+        post :create, {:questionnaire => {}}, valid_session
+        assigns(:questionnaire).should be_a_new(Questionnaire)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
-        Questionaire.any_instance.stub(:save).and_return(false)
-        post :create, {:questionaire => {}}, valid_session
-        response.should render_template("questionaires/steps/step0")
+        Questionnaire.any_instance.stub(:save).and_return(false)
+        post :create, {:questionnaire => {}}, valid_session
+        response.should render_template("questionnaires/steps/step0")
       end
     end
   end
 
   describe "PUT update" do
     describe "with valid params" do
-      it "updates the requested questionaire" do
-        questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
-        # Assuming there are no other questionaires in the database, this
-        # specifies that the Questionaire created on the previous line
+      it "updates the requested questionnaire" do
+        questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
+        # Assuming there are no other questionnaires in the database, this
+        # specifies that the Questionnaire created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Questionaire.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => questionaire.to_param, :questionaire => {'these' => 'params'}}, valid_session
+        Questionnaire.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
+        put :update, {:id => questionnaire.to_param, :questionnaire => {'these' => 'params'}}, valid_session
       end
 
-      it "assigns the requested questionaire as @questionaire" do
-        questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
-        put :update, {:id => questionaire.to_param, :questionaire => step1_attributes}, valid_session
-        assigns(:questionaire).should eq(questionaire)
+      it "assigns the requested questionnaire as @questionnaire" do
+        questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
+        put :update, {:id => questionnaire.to_param, :questionnaire => step1_attributes}, valid_session
+        assigns(:questionnaire).should eq(questionnaire)
       end
 
-      it "redirects to the questionaire" do
-        questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
-        put :update, {:id => questionaire.to_param, :questionaire => step1_attributes}, valid_session
-        response.should redirect_to(new_questionaire_path)
+      it "redirects to the questionnaire" do
+        questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
+        put :update, {:id => questionnaire.to_param, :questionnaire => step1_attributes}, valid_session
+        response.should redirect_to(new_questionnaire_path)
       end
     end
 
     describe "with invalid params" do
-      it "assigns the questionaire as @questionaire" do
-        questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
+      it "assigns the questionnaire as @questionnaire" do
+        questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
         # Trigger the behavior that occurs when invalid params are submitted
-        Questionaire.any_instance.stub(:save).and_return(false)
-        put :update, {:id => questionaire.to_param, :questionaire => {}}, valid_session
-        assigns(:questionaire).should eq(questionaire)
+        Questionnaire.any_instance.stub(:save).and_return(false)
+        put :update, {:id => questionnaire.to_param, :questionnaire => {}}, valid_session
+        assigns(:questionnaire).should eq(questionnaire)
       end
 
       it "re-renders the 'edit' template" do
-        questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id, :step => 2)
+        questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id, :step => 2)
         # Trigger the behavior that occurs when invalid params are submitted
-        Questionaire.any_instance.stub(:save).and_return(false)
-        put :update, {:id => questionaire.to_param, :questionaire => {}}, valid_session
-        response.should render_template("questionaires/steps/step2")
+        Questionnaire.any_instance.stub(:save).and_return(false)
+        put :update, {:id => questionnaire.to_param, :questionnaire => {}}, valid_session
+        response.should render_template("questionnaires/steps/step2")
       end
     end
   end
@@ -207,17 +207,17 @@ describe QuestionairesController do
       auth_admin
     end
     
-    it "destroys the requested questionaire" do
-      questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
+    it "destroys the requested questionnaire" do
+      questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
       expect {
-        delete :destroy, {:id => questionaire.to_param}, valid_session
-      }.to change(Questionaire, :count).by(-1)
+        delete :destroy, {:id => questionnaire.to_param}, valid_session
+      }.to change(Questionnaire, :count).by(-1)
     end
 
-    it "redirects to the questionaires list" do
-      questionaire = FactoryGirl.create(:questionaire, :participant_id => @participant.id)
-      delete :destroy, {:id => questionaire.to_param}, valid_session
-      response.should redirect_to(questionaires_url)
+    it "redirects to the questionnaires list" do
+      questionnaire = FactoryGirl.create(:questionnaire, :participant_id => @participant.id)
+      delete :destroy, {:id => questionnaire.to_param}, valid_session
+      response.should redirect_to(questionnaires_url)
     end
   end
 

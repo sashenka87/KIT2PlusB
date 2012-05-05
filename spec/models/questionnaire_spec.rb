@@ -1,7 +1,7 @@
 # == Schema Information
 # Schema version: 20120501160642
 #
-# Table name: questionaires
+# Table name: questionnaires
 #
 #  id             :integer         not null, primary key
 #  q0             :integer
@@ -100,6 +100,6 @@
 
 require 'spec_helper'
 
-describe Questionaire do
+describe Questionnaire do
   # pending "add some examples to (or delete) #{__FILE__}"
 end

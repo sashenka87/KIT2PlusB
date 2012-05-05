@@ -29,7 +29,7 @@ class Participant < ActiveRecord::Base
   has_one :demographic, :class_name => "Demographic", :foreign_key => "participant_id", :dependent => :destroy
   has_one :graphic, :class_name => "Graphic", :foreign_key => "participant_id", :dependent => :destroy
   has_one :search, :class_name => "Search", :foreign_key => "participant_id", :dependent => :destroy
-  has_one :questionaire, :class_name => "Questionaire", :foreign_key => "participant_id", :dependent => :destroy
+  has_one :questionnaire, :class_name => "Questionnaire", :foreign_key => "participant_id", :dependent => :destroy
   
   def ad_test
     return nil if search.nil?
@@ -40,14 +40,14 @@ class Participant < ActiveRecord::Base
     demographic_steps = 1
     graphic_steps = 8
     search_steps = 6
-    questionaire_steps = 14
+    questionnaire_steps = 14
     
-    total_steps = demographic_steps + graphic_steps + search_steps + questionaire_steps
+    total_steps = demographic_steps + graphic_steps + search_steps + questionnaire_steps
     steps_finished = 0
     steps_finished += demographic_steps unless demographic.nil?
     steps_finished += graphic.step unless graphic.nil?
     steps_finished += search.step unless search.nil?
-    steps_finished += questionaire.step unless questionaire.nil?
+    steps_finished += questionnaire.step unless questionnaire.nil?
     
     return ((steps_finished.to_f / total_steps) * 100).to_i
   end

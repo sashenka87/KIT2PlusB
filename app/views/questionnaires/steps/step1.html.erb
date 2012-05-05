@@ -1,0 +1,15 @@
+<h2>Questionnaire Part 2</h2>
+<br>
+
+<%= render "questionnaires/instructions/instructions", :part => 1, :ad_test => @participant.ad_test %>
+
+<%= form_for @questionnaire, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  <% for i in 7..13 %>
+    <%= render "questionnaires/question", :question => @question_texts[i % 43], :index => i, :f => f %>
+  <% end %>
+
+  <p>
+    <%= f.submit "Next Step", :class => 'btn btn-primary' %>
+  </p>
+<% end %>

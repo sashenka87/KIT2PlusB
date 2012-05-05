@@ -1,4 +1,4 @@
-<%- model_class = Questionaire.new.class -%>
+<%- model_class = Questionnaire.new.class -%>
 <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 <table class="table table-striped">
   <thead>
@@ -93,97 +93,97 @@
     </tr>
   </thead>
   <tbody>
-    <% @questionaires.each do |questionaire| %>
+    <% @questionnaires.each do |questionnaire| %>
       <tr>
-        <td><%= link_to questionaire.id, questionaire_path(questionaire) %></td>
-        <td><%= questionaire.q0 %></td>
-        <td><%= questionaire.q1 %></td>
-        <td><%= questionaire.q2 %></td>
-        <td><%= questionaire.q3 %></td>
-        <td><%= questionaire.q4 %></td>
-        <td><%= questionaire.q5 %></td>
-        <td><%= questionaire.q6 %></td>
-        <td><%= questionaire.q7 %></td>
-        <td><%= questionaire.q8 %></td>
-        <td><%= questionaire.q9 %></td>
-        <td><%= questionaire.q10 %></td>
-        <td><%= questionaire.q11 %></td>
-        <td><%= questionaire.q12 %></td>
-        <td><%= questionaire.q13 %></td>
-        <td><%= questionaire.q14 %></td>
-        <td><%= questionaire.q15 %></td>
-        <td><%= questionaire.q16 %></td>
-        <td><%= questionaire.q17 %></td>
-        <td><%= questionaire.q18 %></td>
-        <td><%= questionaire.q19 %></td>
-        <td><%= questionaire.q20 %></td>
-        <td><%= questionaire.q21 %></td>
-        <td><%= questionaire.q22 %></td>
-        <td><%= questionaire.q23 %></td>
-        <td><%= questionaire.q24 %></td>
-        <td><%= questionaire.q25 %></td>
-        <td><%= questionaire.q26 %></td>
-        <td><%= questionaire.q27 %></td>
-        <td><%= questionaire.q28 %></td>
-        <td><%= questionaire.q29 %></td>
-        <td><%= questionaire.q30 %></td>
-        <td><%= questionaire.q31 %></td>
-        <td><%= questionaire.q32 %></td>
-        <td><%= questionaire.q33 %></td>
-        <td><%= questionaire.q34 %></td>
-        <td><%= questionaire.q35 %></td>
-        <td><%= questionaire.q36 %></td>
-        <td><%= questionaire.q37 %></td>
-        <td><%= questionaire.q38 %></td>
-        <td><%= questionaire.q39 %></td>
-        <td><%= questionaire.q40 %></td>
-        <td><%= questionaire.q41 %></td>
-        <td><%= questionaire.q42 %></td>
-        <td><%= questionaire.q43 %></td>
-        <td><%= questionaire.q44 %></td>
-        <td><%= questionaire.q45 %></td>
-        <td><%= questionaire.q46 %></td>
-        <td><%= questionaire.q47 %></td>
-        <td><%= questionaire.q48 %></td>
-        <td><%= questionaire.q49 %></td>
-        <td><%= questionaire.q50 %></td>
-        <td><%= questionaire.q51 %></td>
-        <td><%= questionaire.q52 %></td>
-        <td><%= questionaire.q53 %></td>
-        <td><%= questionaire.q54 %></td>
-        <td><%= questionaire.q55 %></td>
-        <td><%= questionaire.q56 %></td>
-        <td><%= questionaire.q57 %></td>
-        <td><%= questionaire.q58 %></td>
-        <td><%= questionaire.q59 %></td>
-        <td><%= questionaire.q60 %></td>
-        <td><%= questionaire.q61 %></td>
-        <td><%= questionaire.q62 %></td>
-        <td><%= questionaire.q63 %></td>
-        <td><%= questionaire.q64 %></td>
-        <td><%= questionaire.q65 %></td>
-        <td><%= questionaire.q66 %></td>
-        <td><%= questionaire.q67 %></td>
-        <td><%= questionaire.q68 %></td>
-        <td><%= questionaire.q69 %></td>
-        <td><%= questionaire.q70 %></td>
-        <td><%= questionaire.q71 %></td>
-        <td><%= questionaire.q72 %></td>
-        <td><%= questionaire.q73 %></td>
-        <td><%= questionaire.q74 %></td>
-        <td><%= questionaire.q75 %></td>
-        <td><%= questionaire.q76 %></td>
-        <td><%= questionaire.q77 %></td>
-        <td><%= questionaire.q78 %></td>
-        <td><%= questionaire.q79 %></td>
-        <td><%= questionaire.q80 %></td>
-        <td><%= questionaire.q81 %></td>
-        <td><%= questionaire.context1 %></td>
-        <td><%= questionaire.context2 %></td>
-        <td><%=l questionaire.created_at %></td>
+        <td><%= link_to questionnaire.id, questionnaire_path(questionnaire) %></td>
+        <td><%= questionnaire.q0 %></td>
+        <td><%= questionnaire.q1 %></td>
+        <td><%= questionnaire.q2 %></td>
+        <td><%= questionnaire.q3 %></td>
+        <td><%= questionnaire.q4 %></td>
+        <td><%= questionnaire.q5 %></td>
+        <td><%= questionnaire.q6 %></td>
+        <td><%= questionnaire.q7 %></td>
+        <td><%= questionnaire.q8 %></td>
+        <td><%= questionnaire.q9 %></td>
+        <td><%= questionnaire.q10 %></td>
+        <td><%= questionnaire.q11 %></td>
+        <td><%= questionnaire.q12 %></td>
+        <td><%= questionnaire.q13 %></td>
+        <td><%= questionnaire.q14 %></td>
+        <td><%= questionnaire.q15 %></td>
+        <td><%= questionnaire.q16 %></td>
+        <td><%= questionnaire.q17 %></td>
+        <td><%= questionnaire.q18 %></td>
+        <td><%= questionnaire.q19 %></td>
+        <td><%= questionnaire.q20 %></td>
+        <td><%= questionnaire.q21 %></td>
+        <td><%= questionnaire.q22 %></td>
+        <td><%= questionnaire.q23 %></td>
+        <td><%= questionnaire.q24 %></td>
+        <td><%= questionnaire.q25 %></td>
+        <td><%= questionnaire.q26 %></td>
+        <td><%= questionnaire.q27 %></td>
+        <td><%= questionnaire.q28 %></td>
+        <td><%= questionnaire.q29 %></td>
+        <td><%= questionnaire.q30 %></td>
+        <td><%= questionnaire.q31 %></td>
+        <td><%= questionnaire.q32 %></td>
+        <td><%= questionnaire.q33 %></td>
+        <td><%= questionnaire.q34 %></td>
+        <td><%= questionnaire.q35 %></td>
+        <td><%= questionnaire.q36 %></td>
+        <td><%= questionnaire.q37 %></td>
+        <td><%= questionnaire.q38 %></td>
+        <td><%= questionnaire.q39 %></td>
+        <td><%= questionnaire.q40 %></td>
+        <td><%= questionnaire.q41 %></td>
+        <td><%= questionnaire.q42 %></td>
+        <td><%= questionnaire.q43 %></td>
+        <td><%= questionnaire.q44 %></td>
+        <td><%= questionnaire.q45 %></td>
+        <td><%= questionnaire.q46 %></td>
+        <td><%= questionnaire.q47 %></td>
+        <td><%= questionnaire.q48 %></td>
+        <td><%= questionnaire.q49 %></td>
+        <td><%= questionnaire.q50 %></td>
+        <td><%= questionnaire.q51 %></td>
+        <td><%= questionnaire.q52 %></td>
+        <td><%= questionnaire.q53 %></td>
+        <td><%= questionnaire.q54 %></td>
+        <td><%= questionnaire.q55 %></td>
+        <td><%= questionnaire.q56 %></td>
+        <td><%= questionnaire.q57 %></td>
+        <td><%= questionnaire.q58 %></td>
+        <td><%= questionnaire.q59 %></td>
+        <td><%= questionnaire.q60 %></td>
+        <td><%= questionnaire.q61 %></td>
+        <td><%= questionnaire.q62 %></td>
+        <td><%= questionnaire.q63 %></td>
+        <td><%= questionnaire.q64 %></td>
+        <td><%= questionnaire.q65 %></td>
+        <td><%= questionnaire.q66 %></td>
+        <td><%= questionnaire.q67 %></td>
+        <td><%= questionnaire.q68 %></td>
+        <td><%= questionnaire.q69 %></td>
+        <td><%= questionnaire.q70 %></td>
+        <td><%= questionnaire.q71 %></td>
+        <td><%= questionnaire.q72 %></td>
+        <td><%= questionnaire.q73 %></td>
+        <td><%= questionnaire.q74 %></td>
+        <td><%= questionnaire.q75 %></td>
+        <td><%= questionnaire.q76 %></td>
+        <td><%= questionnaire.q77 %></td>
+        <td><%= questionnaire.q78 %></td>
+        <td><%= questionnaire.q79 %></td>
+        <td><%= questionnaire.q80 %></td>
+        <td><%= questionnaire.q81 %></td>
+        <td><%= questionnaire.context1 %></td>
+        <td><%= questionnaire.context2 %></td>
+        <td><%=l questionnaire.created_at %></td>
         <td>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      questionaire_path(questionaire),
+                      questionnaire_path(questionnaire),
                       :method => :delete,
                       :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
                       :class => 'btn btn-mini btn-danger' %>
@@ -194,5 +194,5 @@
 </table>
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
-            new_questionaire_path,
+            new_questionnaire_path,
             :class => 'btn btn-primary' %>

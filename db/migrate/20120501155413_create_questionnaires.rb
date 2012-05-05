@@ -1,6 +1,6 @@
-class CreateQuestionaires < ActiveRecord::Migration
+class CreateQuestionnaires < ActiveRecord::Migration
   def change
-    create_table :questionaires do |t|
+    create_table :questionnaires do |t|
       t.integer :q0
       t.integer :q1
       t.integer :q2

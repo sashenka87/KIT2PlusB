@@ -1,7 +1,7 @@
 # == Schema Information
 # Schema version: 20120501160642
 #
-# Table name: questionaires
+# Table name: questionnaires
 #
 #  id             :integer         not null, primary key
 #  q0             :integer
@@ -98,7 +98,7 @@
 #  step           :integer         default(0)
 #
 
-class Questionaire < ActiveRecord::Base
+class Questionnaire < ActiveRecord::Base
   attr_accessible :context1, :context2, :q0
   attr_accessible :q1, :q10, :q11, :q12, :q13, :q14, :q15, :q16, :q17, :q18, :q19
   attr_accessible :q2, :q20, :q21, :q22, :q23, :q24, :q25, :q26, :q27, :q28, :q29
