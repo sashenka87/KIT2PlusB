@@ -35,4 +35,20 @@ class Participant < ActiveRecord::Base
     return nil if search.nil?
     return search.ad_test
   end
+  
+  def progress
+    demographic_steps = 1
+    graphic_steps = 8
+    search_steps = 6
+    questionaire_steps = 14
+    
+    total_steps = demographic_steps + graphic_steps + search_steps + questionaire_steps
+    steps_finished = 0
+    steps_finished += demographic_steps unless demographic.nil?
+    steps_finished += graphic.step unless graphic.nil?
+    steps_finished += search.step unless search.nil?
+    steps_finished += questionaire.step unless questionaire.nil?
+    
+    return ((steps_finished.to_f / total_steps) * 100).to_i
+  end
 end
