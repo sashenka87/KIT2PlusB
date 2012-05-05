@@ -21,7 +21,7 @@ class QuestionairesController < ApplicationController
     @questionaire = Questionaire.find(params[:id])
 
     respond_to do |format|
-      format.html { render "questionaires/steps/step#{@questionaire.step}" }
+      format.html
       format.json { render json: @questionaire }
     end
   end
