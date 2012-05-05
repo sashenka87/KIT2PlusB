@@ -1,9 +1,12 @@
 <%= form_for @questionaire, :html => { :class => 'form-horizontal' } do |f| %>
 
   <p class="instructions">
-    <%= render 'questionaires/insturctions/context_instructions', :part => 1, :ad_test => @participant.ad_test %>
+    <%= render 'questionaires/instructions/context_instructions', :part => 1, :ad_test => @participant.ad_test %>
   </p>
-  <%= f.text_area :context1, :class => "span8", :rows => 8 %>
+  
+  <div class="control-group">
+    <%= f.text_area :context1, :class => "span8", :rows => 8 %>
+  </div>
 
   <p>
     <%= f.submit "Next Step", :class => 'btn btn-primary' %>
