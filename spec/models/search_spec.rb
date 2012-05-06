@@ -57,7 +57,7 @@ describe Search do
       @participant = FactoryGirl.create(:participant)
     end
     it "should create a source evaluation" do
-      s_attrs = { :familiarity => 12, :utility => 34, :accessibility => 67, :trust => 87, :source_id => 1 }
+      s_attrs = { :familiarity => 12, :utility => 34, :accessibility => 67, :trust => 87, :source_id => 1, :time_spent => 10 }
       attrs = step0_attributes.merge(step1_attributes).merge(step2_attributes).merge({ :source_evaluations_attributes => [s_attrs] })
       s = @participant.build_search(attrs)
       s.save
