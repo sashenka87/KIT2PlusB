@@ -5,12 +5,12 @@
 
   <div class="row">
     <div class="span4">
-      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+      <%= form_for @search, :html => { :class => 'form-vertical' } do |f| %>
         <%= render "shared/error_messages", :object => f.object %>
         <%= render "searches/tasks/task9", :f => f %>
-        <p>
+        <div class="form-actions">
           <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
-        </p>
+        </div>
       <% end %>
     </div>
     <div class="span8">
@@ -24,12 +24,12 @@
   
   <div class="row">
     <div class="span4">
-      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+      <%= form_for @search, :html => { :class => 'form-vertical' } do |f| %>
         <%= render "shared/error_messages", :object => f.object %>
         <%= render "searches/tasks/task8", :f => f %>
-        <p>
+        <div class="form-actions">
           <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
-        </p>
+        </div>
       <% end %>
     </div>
     <div class="span8">
@@ -43,12 +43,12 @@
 
   <div class="row">
     <div class="span4">
-      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+      <%= form_for @search, :html => { :class => 'form-vertical' } do |f| %>
         <%= render "shared/error_messages", :object => f.object %>
         <%= render "searches/tasks/task6", :f => f %>
-        <p>
+        <div class="form-actions">
           <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
-        </p>
+        </div>
       <% end %>
     </div>
     <div class="span8">
@@ -62,12 +62,12 @@
   
   <div class="row">
     <div class="span4">
-      <%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+      <%= form_for @search, :html => { :class => 'form-vertical' } do |f| %>
         <%= render "shared/error_messages", :object => f.object %>
         <%= render "searches/tasks/task7", :f => f %>
-        <p>
+        <div class="form-actions">
           <%= f.submit "Next Question", :class => 'btn btn-primary source_submit' %>
-        </p>
+        </div>
       <% end %>
     </div>
     <div class="span8">
