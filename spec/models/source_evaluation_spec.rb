@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20120430054748
+# Schema version: 20120506083309
 #
 # Table name: source_evaluations
 #
@@ -12,6 +12,7 @@
 #  created_at    :datetime        not null
 #  updated_at    :datetime        not null
 #  source_id     :integer
+#  time_spent    :integer
 #
 
 require 'spec_helper'
