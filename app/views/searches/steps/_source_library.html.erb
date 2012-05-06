@@ -1,0 +1,20 @@
+<h3>Source Library</h3>
+<p> 
+  <%= link_to_function "Government Report", "set_current_source(1)", :class => "btn btn-info source_page" %>
+  <%= link_to_function "Journal Article", "set_current_source(2)", :class => "btn btn-info source_page" %>
+  <%= link_to_function "Newspaper", "set_current_source(3)", :class => "btn btn-info source_page" %>
+  <%= link_to_function "News Site", "set_current_source(4)", :class => "btn btn-info source_page" %>
+  <%= link_to_function "Online Encyclopedia", "set_current_source(5)", :class => "btn btn-info source_page" %>
+  <%= link_to_function "Blog", "set_current_source(6)", :class => "btn btn-info source_page" %>
+  <%= link_to_function "Website", "set_current_source(7)", :class => "btn btn-info source_page" %>
+</p>
+
+<div class="sources">
+  <div id="source1" class="hidden source"><%= render "source_evaluations/sources/#{folder}/gov" %></div>
+  <div id="source2" class="hidden source"><%= render "source_evaluations/sources/#{folder}/journal" %></div>
+  <div id="source3" class="hidden source"><%= render "source_evaluations/sources/#{folder}/nyt" %></div>
+  <div id="source4" class="hidden source"><%= render "source_evaluations/sources/#{folder}/sci_daily" %></div>
+  <div id="source5" class="hidden source"><%= render "source_evaluations/sources/#{folder}/wiki" %></div>
+  <div id="source6" class="hidden source"><%= render "source_evaluations/sources/#{folder}/blog" %></div>
+  <div id="source7" class="hidden source"><%= render "source_evaluations/sources/#{folder}/website" %></div>
+</div>

@@ -4,10 +4,11 @@ KIT2PlusB::Application.routes.draw do
   match '/welcome' => 'pages#welcome', :as => "welcome", :via => :get
   match '/goodbye' => 'pages#goodbye', :as => "goodbye", :via => :get
 
-  resources :participants, :except => [:edit, :update]
-  resources :demographics, :except => [:edit, :update]
-  resources :graphics,     :except => [:edit]
-  resources :searches,     :except => [:edit]
+  resources :participants,  :except => [:edit, :update]
+  resources :demographics,  :except => [:edit, :update]
+  resources :graphics,      :except => [:edit]
+  resources :searches,      :except => [:edit]
+  resources :questionnaires,:except => [:edit]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

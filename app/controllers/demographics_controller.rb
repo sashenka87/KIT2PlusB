@@ -27,6 +27,11 @@ class DemographicsController < ApplicationController
   # GET /demographics/new
   # GET /demographics/new.json
   def new
+    unless @participant.demographic.nil?
+      redirect_to new_graphic_path
+      return
+    end
+    
     @demographic = @participant.build_demographic
 
     respond_to do |format|

@@ -1,10 +1,10 @@
 <h1>Search Task <small>Response Evaluation</small></h1>
 <br>
 
-<%= form_for @search, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @search, :html => { :class => 'form-vertical' } do |f| %>
   <%= render "shared/error_messages", :object => f.object %>
   <%= render "searches/tasks/task10", :f => f %>
-  <p>
+  <div class="form-actions">
     <%= f.submit "Next Question", :class => 'btn btn-primary' %>
-  </p>
+  </div>
 <% end %>

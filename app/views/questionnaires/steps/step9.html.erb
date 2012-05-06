@@ -1,0 +1,15 @@
+<h2>Questionnaire Part 10</h2>
+<br>
+
+<%= render "questionnaires/instructions/instructions", :part => 2, :ad_test => @participant.ad_test %>
+
+<%= form_for @questionnaire, :html => { :class => 'form-vertical' } do |f| %>
+  <%= render "shared/error_messages", :object => f.object %>
+  <% for i in 57..63 %>
+    <%= render "questionnaires/question", :question => @question_texts[i % 43], :index => i, :f => f %>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit "Next Section", :class => 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120430054748) do
+ActiveRecord::Schema.define(:version => 20120506083309) do
 
   create_table "demographics", :force => true do |t|
     t.integer  "participant_id"
@@ -61,6 +61,101 @@ ActiveRecord::Schema.define(:version => 20120430054748) do
     t.integer  "current_question", :default => 0
   end
 
+  create_table "questionnaires", :force => true do |t|
+    t.integer  "q0"
+    t.integer  "q1"
+    t.integer  "q2"
+    t.integer  "q3"
+    t.integer  "q4"
+    t.integer  "q5"
+    t.integer  "q6"
+    t.integer  "q7"
+    t.integer  "q8"
+    t.integer  "q9"
+    t.integer  "q10"
+    t.integer  "q11"
+    t.integer  "q12"
+    t.integer  "q13"
+    t.integer  "q14"
+    t.integer  "q15"
+    t.integer  "q16"
+    t.integer  "q17"
+    t.integer  "q18"
+    t.integer  "q19"
+    t.integer  "q20"
+    t.integer  "q21"
+    t.integer  "q22"
+    t.integer  "q23"
+    t.integer  "q24"
+    t.integer  "q25"
+    t.integer  "q26"
+    t.integer  "q27"
+    t.integer  "q28"
+    t.integer  "q29"
+    t.integer  "q30"
+    t.integer  "q31"
+    t.integer  "q32"
+    t.integer  "q33"
+    t.integer  "q34"
+    t.integer  "q35"
+    t.integer  "q36"
+    t.integer  "q37"
+    t.integer  "q38"
+    t.integer  "q39"
+    t.integer  "q40"
+    t.integer  "q41"
+    t.integer  "q42"
+    t.integer  "q43"
+    t.integer  "q44"
+    t.integer  "q45"
+    t.integer  "q46"
+    t.integer  "q47"
+    t.integer  "q48"
+    t.integer  "q49"
+    t.integer  "q50"
+    t.integer  "q51"
+    t.integer  "q52"
+    t.integer  "q53"
+    t.integer  "q54"
+    t.integer  "q55"
+    t.integer  "q56"
+    t.integer  "q57"
+    t.integer  "q58"
+    t.integer  "q59"
+    t.integer  "q60"
+    t.integer  "q61"
+    t.integer  "q62"
+    t.integer  "q63"
+    t.integer  "q64"
+    t.integer  "q65"
+    t.integer  "q66"
+    t.integer  "q67"
+    t.integer  "q68"
+    t.integer  "q69"
+    t.integer  "q70"
+    t.integer  "q71"
+    t.integer  "q72"
+    t.integer  "q73"
+    t.integer  "q74"
+    t.integer  "q75"
+    t.integer  "q76"
+    t.integer  "q77"
+    t.integer  "q78"
+    t.integer  "q79"
+    t.integer  "q80"
+    t.integer  "q81"
+    t.integer  "q82"
+    t.integer  "q83"
+    t.integer  "q84"
+    t.integer  "q85"
+    t.text     "context1"
+    t.text     "context2"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.integer  "participant_id"
+    t.integer  "step",           :default => 0
+  end
+
   create_table "searches", :force => true do |t|
     t.integer  "participant_id"
     t.integer  "d_know_astro"
@@ -92,6 +187,7 @@ ActiveRecord::Schema.define(:version => 20120430054748) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "source_id"
+    t.integer  "time_spent"
   end
 
 end
