@@ -4,11 +4,11 @@ KIT2PlusB
 ## Setting up your development/test environment
 
 ```
-bundle install
-rake db:create # first time only
-rake db:migrate # only if you updated the database
-foreman start
-bundle exec autotest
+$ bundle install
+$ rake db:create # first time only
+$ rake db:migrate # only if you updated the database
+$ foreman start
+$ bundle exec autotest
 ```
 
 ## Deploying on Heroku
