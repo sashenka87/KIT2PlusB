@@ -39,7 +39,7 @@ class Search < ActiveRecord::Base
   end
   
   validates_presence_of :ad_test
-  validates_presence_of :participant_id
+  # validates_presence_of :participant_id
 
   validates_presence_of :d_know_astro, :if => Proc.new{ |f| f.step > 0 }
   validates_presence_of :t_know_astro, :if => Proc.new{ |f| f.step > 0 }
@@ -56,6 +56,9 @@ class Search < ActiveRecord::Base
   
   validates_presence_of :confidence_discrete, :if => Proc.new{ |f| f.step > 3 }
   validates_presence_of :confidencewhy_discrete, :if => Proc.new{ |f| f.step > 3 }
+  
+  validates_presence_of :confidence_open, :if => Proc.new{ |f| f.step > 5 }
+  validates_presence_of :confidencewhy_open, :if => Proc.new{ |f| f.step > 5 }
   
   has_many :source_evaluations, :class_name => "SourceEvaluation", :foreign_key => "search_id", :dependent => :destroy
   accepts_nested_attributes_for :source_evaluations, :reject_if => :all_blank

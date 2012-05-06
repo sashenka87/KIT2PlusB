@@ -1,0 +1,23 @@
+<% if part == 1 %>
+
+  <% if ad_test == 0 or ad_test == 3 %>
+    <%= render "questionnaires/instructions/a_instructions" %>
+  <% end %>
+  
+  <% if ad_test == 1 or ad_test == 2 %>
+    <%= render "questionnaires/instructions/b_instructions" %>
+  <% end %>
+
+<% end %>  
+
+<% if part == 2 %>
+  
+  <% if ad_test == 0 or ad_test == 3 %>
+    <%= render "questionnaires/instructions/b_instructions" %>
+  <% end %>
+  
+  <% if ad_test == 1 or ad_test == 2 %>
+    <%= render "questionnaires/instructions/c_instructions" %>
+  <% end %>
+  
+<% end %>

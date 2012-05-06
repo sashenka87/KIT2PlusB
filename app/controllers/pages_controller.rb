@@ -1,5 +1,9 @@
 class PagesController < ApplicationController
   def welcome
+    if @progress
+      redirect_to new_demographic_path
+      return
+    end
   end
 
   def goodbye

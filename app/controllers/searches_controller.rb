@@ -27,10 +27,10 @@ class SearchesController < ApplicationController
   # GET /searches/new
   # GET /searches/new.json
   def new
-    @search = current_search || @participant.create_search
+    @search = current_search || @participant.create_search # so that I can accept nested attributes
 
     if @search.step > 5
-      redirect_to goodbye_path
+      redirect_to new_questionnaire_path
       return
     end
 

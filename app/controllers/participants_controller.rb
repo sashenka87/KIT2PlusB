@@ -26,6 +26,12 @@ class ParticipantsController < ApplicationController
   # GET /participants/new
   # GET /participants/new.json
   def new
+    p = Participant.find_by_session_id(session[:session_id])
+    unless p.nil?
+      redirect_to new_demographic_path
+      return
+    end
+    
     @participant = Participant.new
     
     respond_to do |format|
