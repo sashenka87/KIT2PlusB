@@ -30,7 +30,6 @@ $ heroku run rake db:migrate # only if you updated the database
 http://drlrl-kit2.herokuapp.com/
 
 ## Citation for the 100 mm line
-```
+`(Schraw & Dennison, 1994)` [pdf](http://wiki.biologyscholars.org/@api/deki/files/99/=Schraw1994.pdf)  
+
 http://wiki.biologyscholars.org/@api/deki/files/99/=Schraw1994.pdf
-(Schraw & Dennison, 1994)
-```
