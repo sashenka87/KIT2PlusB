@@ -26,3 +26,5 @@ Updating your application
 $ git push heroku master
 $ heroku run rake db:migrate # only if you updated the database
 ```
+
+http://drlrl-kit2.herokuapp.com/
