@@ -1,0 +1,82 @@
+<h1>Dashboard</h1>
+<br>
+
+<table class="table table-striped table-bordered span5">
+  <thead>
+    <tr>
+      <th>Stage</th>
+      <th>Num Entries</th>
+      <th>Attrition</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td>Consent</td>
+      <td><%= participants = Participant.count %></td>
+      <td>n/a</td>
+    </tr>
+    <tr>
+      <td>Demographics</td>
+      <td><%= demographics = Demographic.count %></td>
+      <td><%= (1 - demographics/participants.to_f).round(3) %></td>
+    </tr>
+    <tr>
+      <td>Graphics</td>
+      <td><%= graphics = Graphic.count %></td>
+      <td><%= (1 - graphics/demographics.to_f).round(3) %></td>
+    </tr>
+    <tr>
+      <td>Searches</td>
+      <td><%= searches = Search.count %></td>
+      <td><%= (1 - searches/graphics.to_f).round(3) %></td>
+    </tr>
+    <tr>
+      <td>Questionnaire</td>
+      <td><%= q = Questionnaire.count %></td>
+      <td><%= (1- q/searches.to_f).round(3) %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Total</td>
+      <td><%= (1 - q/participants.to_f).round(3) %></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-striped table-bordered span4">
+  <tbody>
+    <tr>
+      <td>Num Completed Search Tasks</td>
+      <td><%= search_count = Search.where("step > 5").count %></td>
+    </tr>
+    <tr>
+      <td>Average Num of Sources For Completed <br>Search Tasks</td>
+      <td><%= (SourceEvaluation.count/search_count.to_f).round(3) %></td>
+    </tr>
+    <tr>
+      <td>Average Time spent on each source</td>
+      <td><%= (SourceEvaluation.average(:time_spent)/1000.to_f).round(3) %> sec</td>
+    </tr>
+    <tr>
+      <th>AB Testing</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>Case 0</td>
+      <td><%= Search.where("ad_test = 0").count %></td>
+    </tr>
+    <tr>
+      <td>Case 1</td>
+      <td><%= Search.where("ad_test = 1").count %></td>
+    </tr>
+    <tr>
+      <td>Case 2</td>
+      <td><%= Search.where("ad_test = 2").count %></td>
+    </tr>
+    <tr>
+      <td>Case 3</td>
+      <td><%= Search.where("ad_test = 3").count %></td>
+    </tr>
+  </tbody>
+</table>
