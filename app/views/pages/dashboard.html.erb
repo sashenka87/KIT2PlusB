@@ -33,8 +33,13 @@
     </tr>
     <tr>
       <td>Questionnaire</td>
-      <td><%= q = Questionnaire.count %></td>
-      <td><%= (1- q/searches.to_f).round(3) %></td>
+      <td><%= q1 = Questionnaire.count %></td>
+      <td><%= (1- q1/searches.to_f).round(3) %></td>
+    </tr>
+    <tr>
+      <td>Completed Questionnaire</td>
+      <td><%= q = Questionnaire.where("step > 13").count %></td>
+      <td><%= (1- q/q1.to_f).round(3) %></td>
     </tr>
     <tr>
       <td></td>
