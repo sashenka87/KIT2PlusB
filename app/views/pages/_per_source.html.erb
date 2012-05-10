@@ -1,10 +1,10 @@
 <td><%= s = SourceEvaluation.where("source_id = ?", index).count %></td>
 <% if s > 0 %>
   <td><%= (SourceEvaluation.where("source_id = ?", index).average(:time_spent)/1000.to_f).round(3) %></td>
-  <td><%= (SourceEvaluation.where("source_id = ?", index).average(:familiarity)/1000.to_f).round(3) %></td>
-  <td><%= (SourceEvaluation.where("source_id = ?", index).average(:trust)/1000.to_f).round(3) %></td>
-  <td><%= (SourceEvaluation.where("source_id = ?", index).average(:utility)/1000.to_f).round(3) %></td>
-  <td><%= (SourceEvaluation.where("source_id = ?", index).average(:accessibility)/1000.to_f).round(3) %></td>
+  <td><%= SourceEvaluation.where("source_id = ?", index).average(:familiarity) %></td>
+  <td><%= SourceEvaluation.where("source_id = ?", index).average(:trust) %></td>
+  <td><%= SourceEvaluation.where("source_id = ?", index).average(:utility) %></td>
+  <td><%= SourceEvaluation.where("source_id = ?", index).average(:accessibility) %></td>
 <% else %>
   <td>n/a</td>
   <td>n/a</td>
