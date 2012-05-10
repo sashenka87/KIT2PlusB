@@ -85,3 +85,43 @@
     </tr>
   </tbody>
 </table>
+
+<table class="table table-striped table-bordered span5">
+  <thead>
+    <tr>
+      <th>Source Type</th>
+      <th>Num used</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <td>Government Report</td>
+      <td><%= SourceEvaluation.where("source_id = 1").count %></td>
+    </tr>
+    <tr>
+      <td>Journal Article</td>
+      <td><%= SourceEvaluation.where("source_id = 2").count %></td>
+    </tr>
+    <tr>
+      <td>Newspaper</td>
+      <td><%= SourceEvaluation.where("source_id = 3").count %></td>
+    </tr>
+    <tr>
+      <td>News Site</td>
+      <td><%= SourceEvaluation.where("source_id = 4").count %></td>
+    </tr>
+    <tr>
+      <td>Online Encyclopedia</td>
+      <td><%= SourceEvaluation.where("source_id = 5").count %></td>
+    </tr>
+    <tr>
+      <td>Blog</td>
+      <td><%= SourceEvaluation.where("source_id = 6").count %></td>
+    </tr>
+    <tr>
+      <td>Website</td>
+      <td><%= SourceEvaluation.where("source_id = 7").count %></td>
+    </tr>
+  </tbody>
+</table>
