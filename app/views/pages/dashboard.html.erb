@@ -86,42 +86,47 @@
   </tbody>
 </table>
 
-<table class="table table-striped table-bordered span5">
+<table class="table table-striped table-bordered span9">
   <thead>
     <tr>
       <th>Source Type</th>
       <th>Num used</th>
+      <th>Avg Time Spent</th>
+      <th>Avg Familiarity</th>
+      <th>Avg Trustworthiness</th>
+      <th>Avg Useful</td>
+      <th>Avg Accessible</th>
     </tr>
   </thead>
   
   <tbody>
     <tr>
       <td>Government Report</td>
-      <td><%= SourceEvaluation.where("source_id = 1").count %></td>
+      <%= render 'per_source', :index => 1 %>
     </tr>
     <tr>
       <td>Journal Article</td>
-      <td><%= SourceEvaluation.where("source_id = 2").count %></td>
+      <%= render 'per_source', :index => 2 %>
     </tr>
     <tr>
       <td>Newspaper</td>
-      <td><%= SourceEvaluation.where("source_id = 3").count %></td>
+      <%= render 'per_source', :index => 3 %>
     </tr>
     <tr>
       <td>News Site</td>
-      <td><%= SourceEvaluation.where("source_id = 4").count %></td>
+      <%= render 'per_source', :index => 4 %>
     </tr>
     <tr>
       <td>Online Encyclopedia</td>
-      <td><%= SourceEvaluation.where("source_id = 5").count %></td>
+      <%= render 'per_source', :index => 5 %>
     </tr>
     <tr>
       <td>Blog</td>
-      <td><%= SourceEvaluation.where("source_id = 6").count %></td>
+      <%= render 'per_source', :index => 6 %>
     </tr>
     <tr>
       <td>Website</td>
-      <td><%= SourceEvaluation.where("source_id = 7").count %></td>
+      <%= render 'per_source', :index => 7 %>
     </tr>
   </tbody>
 </table>
