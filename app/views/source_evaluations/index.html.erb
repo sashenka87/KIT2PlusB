@@ -1,0 +1,35 @@
+<h1>Source Evaluations</h1>
+<br>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>search_id</th>
+      <th>familiarity</th>
+      <th>utility</th>
+      <th>accessibility</th>
+      <th>trust</th>
+      <th>created_at</th>
+      <th>updated_at</th>
+      <th>source_id</th>
+      <th>time_spent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @source_evaluations.each do |source| %>
+      <tr>
+        <td><%= source.id %></td>
+        <td><%= source.search_id %></td>
+        <td><%= source.familiarity %></td>
+        <td><%= source.utility %></td>
+        <td><%= source.accessibility %></td>
+        <td><%= source.trust %></td>
+        <td><%= source.created_at %></td>
+        <td><%= source.updated_at %></td>
+        <td><%= source.source_id %></td>
+        <td><%= source.time_spent %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
