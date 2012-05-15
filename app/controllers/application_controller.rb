@@ -1,3 +1,5 @@
+require "CSV"
+
 class ApplicationController < ActionController::Base
   before_filter :add_progress
   protect_from_forgery
