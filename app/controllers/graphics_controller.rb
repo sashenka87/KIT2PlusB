@@ -10,6 +10,21 @@ class GraphicsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @graphics }
+      format.csv {
+        csv_string = CSV.generate do |csv|
+          csv << ["ID", "participant_id", "graphics_ki", "graphics_ki_text", "graphics_kt", "graphics_kt_text",
+                  "graphics_it", "graphics_it_text", "k_def", "i_def", "t_def", "kit", "context", "domain", 
+                  "created_at", "updated_at"]
+          @graphics.each do |g|
+            csv << [g.id, g.participant_id, g.graphics_ki, g.graphics_ki_text, g.graphics_kt, g.graphics_kt_text, 
+                    g.graphics_it, g.graphics_it_text, g.k_def, g.i_def, g.t_def, g.kit, g.context, g.domain, 
+                    g.created_at, g.updated_at]
+          end
+        end
+
+        send_data csv_string, :type => 'text/csv; charset=iso-8859-1; header=present',
+                              :disposition => "attachment; filename=graphics.csv"
+      }
     end
   end
 
