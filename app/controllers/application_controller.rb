@@ -1,4 +1,4 @@
-require "CSV"
+require "csv"
 
 class ApplicationController < ActionController::Base
   before_filter :add_progress
