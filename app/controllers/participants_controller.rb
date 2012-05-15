@@ -9,6 +9,17 @@ class ParticipantsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @participants }
+      format.csv {
+        csv_string = CSV.generate do |csv|
+          csv << ["ID","ip_address", "first_name", "last_name", "instructor", "country", "created_at", "updated_at"]
+          @participants.each do |p|
+            csv << [p.id, p.ip_address, p.first_name, p.last_name, p.instructor, p.country, p.created_at, p.updated_at]
+          end
+        end
+
+        send_data csv_string, :type => 'text/csv; charset=iso-8859-1; header=present',
+                              :disposition => "attachment; filename=participants.csv"
+      }
     end
   end
 
