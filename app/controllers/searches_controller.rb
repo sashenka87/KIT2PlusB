@@ -10,6 +10,21 @@ class SearchesController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @searches }
+      format.csv {
+        csv_string = CSV.generate do |csv|
+          csv << ["ID", "participant_id", "d_know_astro", "d_know_psyc", "t_know_astro", "t_know_psyc", "d_interest_astro",
+                  "d_interest_psyc", "t_interest_astro", "t_interest_psyc", "confidence_discrete", "confidence_open", "answer_discrete",
+                  "answer_open", "confidencewhy_discrete", "confidencewhy_open", "created_at", "updated_at", "ad_test"]
+          @searches.each do |s|
+            csv << [s.id, s.participant_id, s.d_know_astro, s.d_know_psyc, s.t_know_astro, s.t_know_psyc, s.d_interest_astro, 
+                    s.d_interest_psyc, s.t_interest_astro, s.t_interest_psyc, s.confidence_discrete, s.confidence_open, s.answer_discrete, 
+                    s.answer_open, s.confidencewhy_discrete, s.confidencewhy_open, s.created_at, s.updated_at, s.ad_test]
+          end
+        end
+
+        send_data csv_string, :type => 'text/csv; charset=iso-8859-1; header=present',
+                              :disposition => "attachment; filename=searches.csv"
+      }
     end
   end
 
