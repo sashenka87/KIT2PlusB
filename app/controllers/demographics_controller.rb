@@ -10,6 +10,21 @@ class DemographicsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @demographics }
+      format.csv {
+        csv_string = CSV.generate do |csv|
+          csv << ["ID", "participant_id", "gender", "age", "ethnicity", "major", "year_university", "gpa",
+                  "country_of_residence", "country_of_birth", "country_of_schooling", "native_english",
+                  "native_language", "created_at", "updated_at"]
+          @demographics.each do |d|
+            csv << [d.id, d.participant_id, d.gender, d.age, d.ethnicity, d.major, d.year_university, d.gpa, 
+                    d.country_of_residence, d.country_of_birth, d.country_of_schooling, d.native_english, 
+                    d.native_language, d.created_at, d.updated_at]
+          end
+        end
+
+        send_data csv_string, :type => 'text/csv; charset=iso-8859-1; header=present',
+                              :disposition => "attachment; filename=demographics.csv"
+      }
     end
   end
 
