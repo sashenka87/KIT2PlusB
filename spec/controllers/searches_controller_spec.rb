@@ -75,6 +75,17 @@ describe SearchesController do
       assigns(:searches).should eq([search])
     end
   end
+  
+  describe "GET nested_download" do
+    before(:each) do
+      auth_admin
+    end
+    it "assigns all searches as @searches" do
+      search = FactoryGirl.create(:search, :participant_id => @participant.id)
+      get :nested_download, {}, valid_session
+      assigns(:searches).should eq([search])
+    end
+  end
 
   describe "GET show" do
     before(:each) do

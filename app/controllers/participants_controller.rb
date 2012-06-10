@@ -11,7 +11,7 @@ class ParticipantsController < ApplicationController
       format.json { render json: @participants }
       format.csv {
         csv_string = CSV.generate do |csv|
-          csv << ["ID","ip_address", "first_name", "last_name", "instructor", "country", "created_at", "updated_at"]
+          csv << ["id","ip_address", "first_name", "last_name", "instructor", "country", "created_at", "updated_at"]
           @participants.each do |p|
             csv << [p.id, p.ip_address, p.first_name, p.last_name, p.instructor, p.country, p.created_at, p.updated_at]
           end

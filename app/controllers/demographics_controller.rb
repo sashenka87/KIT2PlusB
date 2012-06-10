@@ -12,7 +12,7 @@ class DemographicsController < ApplicationController
       format.json { render json: @demographics }
       format.csv {
         csv_string = CSV.generate do |csv|
-          csv << ["ID", "participant_id", "gender", "age", "ethnicity", "major", "year_university", "gpa",
+          csv << ["id", "participant_id", "gender", "age", "ethnicity", "major", "year_university", "gpa",
                   "country_of_residence", "country_of_birth", "country_of_schooling", "native_english",
                   "native_language", "created_at", "updated_at"]
           @demographics.each do |d|

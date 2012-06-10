@@ -8,7 +8,7 @@ class SourceEvaluationsController < ApplicationController
       format.html
       format.csv {
         csv_string = CSV.generate do |csv|
-          csv << ["Id", "search_id", "familiarity", "utility", "accessibility", "trust", "created_at", "updated_at", "source_id", "time_spent"]
+          csv << ["id", "search_id", "familiarity", "utility", "accessibility", "trust", "created_at", "updated_at", "source_id", "time_spent"]
           @source_evaluations.each do |source|
             csv << [source.id, source.search_id, source.familiarity, source.utility, source.accessibility, source.trust, 
               source.created_at, source.updated_at, source.source_id, source.time_spent]

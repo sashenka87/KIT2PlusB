@@ -12,7 +12,7 @@ class GraphicsController < ApplicationController
       format.json { render json: @graphics }
       format.csv {
         csv_string = CSV.generate do |csv|
-          csv << ["ID", "participant_id", "graphics_ki", "graphics_ki_text", "graphics_kt", "graphics_kt_text",
+          csv << ["id", "participant_id", "graphics_ki", "graphics_ki_text", "graphics_kt", "graphics_kt_text",
                   "graphics_it", "graphics_it_text", "k_def", "i_def", "t_def", "kit", "context", "domain", 
                   "created_at", "updated_at"]
           @graphics.each do |g|
