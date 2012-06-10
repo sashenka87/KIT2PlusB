@@ -27,6 +27,10 @@
         <td><%= link_to "Download", searches_path(:format => :csv) %></td>
       </tr>
       <tr>
+        <td>Search (with nested sources)</td>
+        <td><%= link_to "Download", nested_download_searches_path(:format => :csv) %></td>
+      </tr>
+      <tr>
         <td>Sources</td>
         <td><%= link_to "Download", source_evaluations_path(:format => :csv) %></td>
       </tr>
