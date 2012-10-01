@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_admin, :only => [:dashboard]
+  before_filter :authenticate_admin, :only => [:dashboard, :downloads]
   
   def welcome
     if @progress
@@ -15,6 +15,10 @@ class PagesController < ApplicationController
   end
   
   def dashboard
+    
+  end
+  
+  def downloads
     
   end
   

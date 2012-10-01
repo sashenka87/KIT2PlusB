@@ -6,6 +6,10 @@ describe SearchesController do
     it "routes to #index" do
       get("/searches").should route_to("searches#index")
     end
+    
+    it "routes to #nested_download" do
+      get("/searches/nested_download").should route_to("searches#nested_download")
+    end
 
     it "routes to #new" do
       get("/searches/new").should route_to("searches#new")
