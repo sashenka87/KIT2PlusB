@@ -187,9 +187,9 @@ class Questionnaire < ActiveRecord::Base
   validates_presence_of :q72       ,:if => Proc.new{ |f| f.step > 11 }
   validates_presence_of :q73       ,:if => Proc.new{ |f| f.step > 11 }
   validates_presence_of :q74       ,:if => Proc.new{ |f| f.step > 11 }
-  validates_presence_of :q75       ,:if => Proc.new{ |f| f.step > 12 }
-  validates_presence_of :q76       ,:if => Proc.new{ |f| f.step > 12 }
-  validates_presence_of :q77       ,:if => Proc.new{ |f| f.step > 12 }
+  validates_presence_of :q75       ,:if => Proc.new{ |f| f.step > 11 }
+  validates_presence_of :q76       ,:if => Proc.new{ |f| f.step > 11 }
+  validates_presence_of :q77       ,:if => Proc.new{ |f| f.step > 11 }
   validates_presence_of :q78       ,:if => Proc.new{ |f| f.step > 12 }
   validates_presence_of :q79       ,:if => Proc.new{ |f| f.step > 12 }
   validates_presence_of :q80       ,:if => Proc.new{ |f| f.step > 12 }

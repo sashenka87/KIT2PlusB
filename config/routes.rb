@@ -4,11 +4,17 @@ KIT2PlusB::Application.routes.draw do
   match '/welcome'   => 'pages#welcome',   :as => "welcome",   :via => :get
   match '/goodbye'   => 'pages#goodbye',   :as => "goodbye",   :via => :get
   match '/dashboard' => 'pages#dashboard', :as => "dashboard", :via => :get
+  match '/downloads' => 'pages#downloads', :as => "downloads", :via => :get
 
   resources :participants,  :except => [:edit, :update]
   resources :demographics,  :except => [:edit, :update]
   resources :graphics,      :except => [:edit]
-  resources :searches,      :except => [:edit]
+  resources :searches,      :except => [:edit] do
+    collection do
+      get 'nested_download'
+    end
+  end
+  resources :source_evaluations, :only => [:index]
   resources :questionnaires,:except => [:edit]
 
   # The priority is based upon order of creation:
